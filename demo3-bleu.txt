@@ -1,0 +1,8 @@
+(py37torch1) C:\Users\Server_K\k_workspace\attention\OpenNMT-py>perl tools/multi-bleu-detok.perl data/en-de/eval.de.bpe < result/en-de/demo3_8.pred
+BLEU = 32.22, 61.1/40.7/28.3/23.2 (BP=0.901, ratio=0.906, hyp_len=310785, ref_len=343112)
+
+(py37torch1) C:\Users\Server_K\k_workspace\attention\OpenNMT-py>perl tools/multi-bleu-detok.perl data/en-de/eval.de.bpe < result/en-de/demo3_11.pred
+BLEU = 32.49, 61.6/41.2/28.8/23.7 (BP=0.896, ratio=0.901, hyp_len=309061, ref_len=343112)
+
+(py37torch1) C:\Users\Server_K\k_workspace\attention\OpenNMT-py>perl tools/multi-bleu-detok.perl data/en-de/eval.de.bpe < result/en-de/demo3_14.pred
+BLEU = 32.76, 62.5/41.9/29.3/24.1 (BP=0.888, ratio=0.894, hyp_len=306646, ref_len=343112)

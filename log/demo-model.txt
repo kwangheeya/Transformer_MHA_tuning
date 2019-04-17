@@ -1,0 +1,732 @@
+(py37torch1) C:\Users\Server_K\k_workspace\attention\OpenNMT-py>python train.py -data data/en-de/demo -save_model save/en-de/demo-model  -layers 6 -rnn_size 512 -word_vec_size 512 -transformer_ff 2048 -heads 8 -encoder_type transformer -decoder_type transformer -position_encoding -train_steps 100000  -max_generator_batches 2 -dropout 0.1  -batch_size 12288 -batch_type tokens -normalization tokens  -accum_count 2 -optim adam -adam_beta2 0.998 -decay_method noam -warmup_steps 4000 -learning_rate 2 -max_grad_norm 0 -param_init 0  -param_init_glorot -label_smoothing 0.1 -valid_steps 1000 -save_checkpoint_steps 1000  -world_size 1 -gpu_ranks 0
+[2019-04-15 16:45:18,827 INFO]  * src vocab size = 16216
+[2019-04-15 16:45:18,827 INFO]  * tgt vocab size = 22641
+[2019-04-15 16:45:18,827 INFO] Building model...
+[2019-04-15 16:45:21,357 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(16216, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(22641, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Linear(in_features=512, out_features=512, bias=True)
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=512, out_features=22641, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2019-04-15 16:45:21,357 INFO] encoder: 27217920
+[2019-04-15 16:45:21,357 INFO] decoder: 48432241
+[2019-04-15 16:45:21,357 INFO] * number of parameters: 75650161
+[2019-04-15 16:45:21,357 INFO] Starting training on GPU: [0]
+[2019-04-15 16:45:21,357 INFO] Start training loop and validate every 1000 steps...
+[2019-04-15 16:45:25,481 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 16:46:25,830 INFO] Step 50/100000; acc:   2.74; ppl: 5006.85; xent: 8.52; lr: 0.00002; 15233/16982 tok/s;     64 sec
+[2019-04-15 16:47:23,971 INFO] Step 100/100000; acc:   5.26; ppl: 2982.66; xent: 8.00; lr: 0.00004; 17462/19025 tok/s;    123 sec
+[2019-04-15 16:48:23,199 INFO] Step 150/100000; acc:   6.33; ppl: 1525.49; xent: 7.33; lr: 0.00005; 16885/18611 tok/s;    182 sec
+[2019-04-15 16:49:21,454 INFO] Step 200/100000; acc:   9.25; ppl: 847.02; xent: 6.74; lr: 0.00007; 17292/18579 tok/s;    240 sec
+[2019-04-15 16:50:20,488 INFO] Step 250/100000; acc:   9.92; ppl: 636.55; xent: 6.46; lr: 0.00009; 17785/18281 tok/s;    299 sec
+[2019-04-15 16:51:19,439 INFO] Step 300/100000; acc:  11.40; ppl: 551.15; xent: 6.31; lr: 0.00011; 17335/18532 tok/s;    358 sec
+[2019-04-15 16:52:18,291 INFO] Step 350/100000; acc:  11.70; ppl: 446.02; xent: 6.10; lr: 0.00012; 17559/18604 tok/s;    417 sec
+[2019-04-15 16:53:17,265 INFO] Step 400/100000; acc:  12.24; ppl: 358.38; xent: 5.88; lr: 0.00014; 16824/18755 tok/s;    476 sec
+[2019-04-15 16:54:16,450 INFO] Step 450/100000; acc:  13.48; ppl: 296.73; xent: 5.69; lr: 0.00016; 17454/18591 tok/s;    535 sec
+[2019-04-15 16:55:19,287 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 16:55:22,037 INFO] Step 500/100000; acc:  13.53; ppl: 264.89; xent: 5.58; lr: 0.00018; 15752/16305 tok/s;    601 sec
+[2019-04-15 16:56:20,759 INFO] Step 550/100000; acc:  14.34; ppl: 232.59; xent: 5.45; lr: 0.00019; 16767/18677 tok/s;    659 sec
+[2019-04-15 16:57:19,275 INFO] Step 600/100000; acc:  15.23; ppl: 203.89; xent: 5.32; lr: 0.00021; 17353/18903 tok/s;    718 sec
+[2019-04-15 16:58:18,316 INFO] Step 650/100000; acc:  16.02; ppl: 180.69; xent: 5.20; lr: 0.00023; 16856/18658 tok/s;    777 sec
+[2019-04-15 16:59:16,651 INFO] Step 700/100000; acc:  16.67; ppl: 165.41; xent: 5.11; lr: 0.00024; 17286/18555 tok/s;    835 sec
+[2019-04-15 17:00:16,150 INFO] Step 750/100000; acc:  18.39; ppl: 139.63; xent: 4.94; lr: 0.00026; 17727/18133 tok/s;    895 sec
+[2019-04-15 17:01:14,890 INFO] Step 800/100000; acc:  19.58; ppl: 125.90; xent: 4.84; lr: 0.00028; 17395/18552 tok/s;    954 sec
+[2019-04-15 17:02:13,516 INFO] Step 850/100000; acc:  20.48; ppl: 113.84; xent: 4.73; lr: 0.00030; 17620/18647 tok/s;   1012 sec
+[2019-04-15 17:03:12,242 INFO] Step 900/100000; acc:  21.03; ppl: 105.70; xent: 4.66; lr: 0.00031; 16870/18898 tok/s;   1071 sec
+[2019-04-15 17:04:11,132 INFO] Step 950/100000; acc:  23.13; ppl: 89.80; xent: 4.50; lr: 0.00033; 17576/18662 tok/s;   1130 sec
+[2019-04-15 17:05:12,230 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 17:05:16,135 INFO] Step 1000/100000; acc:  23.85; ppl: 83.00; xent: 4.42; lr: 0.00035; 15887/16449 tok/s;   1195 sec
+[2019-04-15 17:05:16,151 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 17:05:22,509 INFO] Validation perplexity: 249.981
+[2019-04-15 17:05:22,509 INFO] Validation accuracy: 18.554
+[2019-04-15 17:05:22,525 INFO] Saving checkpoint save/en-de/demo-model_step_1000.pt
+[2019-04-15 17:06:21,677 INFO] Step 1050/100000; acc:  25.23; ppl: 74.70; xent: 4.31; lr: 0.00037; 14990/16712 tok/s;   1260 sec
+[2019-04-15 17:07:19,915 INFO] Step 1100/100000; acc:  26.69; ppl: 65.94; xent: 4.19; lr: 0.00038; 17473/19063 tok/s;   1319 sec
+[2019-04-15 17:08:18,753 INFO] Step 1150/100000; acc:  27.76; ppl: 60.06; xent: 4.10; lr: 0.00040; 16903/18713 tok/s;   1377 sec
+[2019-04-15 17:09:16,801 INFO] Step 1200/100000; acc:  28.69; ppl: 55.70; xent: 4.02; lr: 0.00042; 17341/18644 tok/s;   1435 sec
+[2019-04-15 17:10:15,564 INFO] Step 1250/100000; acc:  31.49; ppl: 45.84; xent: 3.83; lr: 0.00044; 17852/18320 tok/s;   1494 sec
+[2019-04-15 17:11:14,223 INFO] Step 1300/100000; acc:  32.13; ppl: 43.47; xent: 3.77; lr: 0.00045; 17535/18636 tok/s;   1553 sec
+[2019-04-15 17:12:12,359 INFO] Step 1350/100000; acc:  33.37; ppl: 39.94; xent: 3.69; lr: 0.00047; 17657/18746 tok/s;   1611 sec
+[2019-04-15 17:13:10,984 INFO] Step 1400/100000; acc:  33.49; ppl: 38.73; xent: 3.66; lr: 0.00049; 17031/18927 tok/s;   1670 sec
+[2019-04-15 17:14:09,632 INFO] Step 1450/100000; acc:  36.31; ppl: 32.15; xent: 3.47; lr: 0.00051; 17634/18708 tok/s;   1728 sec
+[2019-04-15 17:15:09,130 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 17:15:14,144 INFO] Step 1500/100000; acc:  36.72; ppl: 31.11; xent: 3.44; lr: 0.00052; 15998/16593 tok/s;   1793 sec
+[2019-04-15 17:16:13,118 INFO] Step 1550/100000; acc:  37.87; ppl: 28.66; xent: 3.36; lr: 0.00054; 16666/18635 tok/s;   1852 sec
+[2019-04-15 17:17:11,774 INFO] Step 1600/100000; acc:  39.00; ppl: 26.51; xent: 3.28; lr: 0.00056; 17360/18785 tok/s;   1910 sec
+[2019-04-15 17:18:11,015 INFO] Step 1650/100000; acc:  40.13; ppl: 24.53; xent: 3.20; lr: 0.00058; 16777/18631 tok/s;   1970 sec
+[2019-04-15 17:19:09,342 INFO] Step 1700/100000; acc:  40.12; ppl: 24.31; xent: 3.19; lr: 0.00059; 17250/18549 tok/s;   2028 sec
+[2019-04-15 17:20:08,019 INFO] Step 1750/100000; acc:  43.26; ppl: 19.95; xent: 2.99; lr: 0.00061; 17865/18466 tok/s;   2087 sec
+[2019-04-15 17:21:07,435 INFO] Step 1800/100000; acc:  43.24; ppl: 19.89; xent: 2.99; lr: 0.00063; 17338/18371 tok/s;   2146 sec
+[2019-04-15 17:22:05,492 INFO] Step 1850/100000; acc:  43.03; ppl: 20.03; xent: 3.00; lr: 0.00065; 17538/18765 tok/s;   2204 sec
+[2019-04-15 17:23:04,030 INFO] Step 1900/100000; acc:  43.06; ppl: 19.75; xent: 2.98; lr: 0.00066; 17162/18982 tok/s;   2263 sec
+[2019-04-15 17:24:02,337 INFO] Step 1950/100000; acc:  45.40; ppl: 17.00; xent: 2.83; lr: 0.00068; 17730/18821 tok/s;   2321 sec
+[2019-04-15 17:25:00,724 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 17:25:06,926 INFO] Step 2000/100000; acc:  45.10; ppl: 17.21; xent: 2.85; lr: 0.00070; 15981/16530 tok/s;   2386 sec
+[2019-04-15 17:25:06,941 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 17:25:14,580 INFO] Validation perplexity: 40.7788
+[2019-04-15 17:25:14,580 INFO] Validation accuracy: 38.8564
+[2019-04-15 17:25:14,580 INFO] Saving checkpoint save/en-de/demo-model_step_2000.pt
+[2019-04-15 17:26:13,954 INFO] Step 2050/100000; acc:  45.41; ppl: 16.71; xent: 2.82; lr: 0.00072; 14670/16437 tok/s;   2453 sec
+[2019-04-15 17:27:12,097 INFO] Step 2100/100000; acc:  46.18; ppl: 15.97; xent: 2.77; lr: 0.00073; 17512/18945 tok/s;   2511 sec
+[2019-04-15 17:28:10,914 INFO] Step 2150/100000; acc:  46.50; ppl: 15.52; xent: 2.74; lr: 0.00075; 16923/18744 tok/s;   2570 sec
+[2019-04-15 17:29:08,991 INFO] Step 2200/100000; acc:  45.89; ppl: 16.03; xent: 2.77; lr: 0.00077; 17346/18530 tok/s;   2628 sec
+[2019-04-15 17:30:07,991 INFO] Step 2250/100000; acc:  48.83; ppl: 13.38; xent: 2.59; lr: 0.00079; 17751/18489 tok/s;   2687 sec
+[2019-04-15 17:31:06,666 INFO] Step 2300/100000; acc:  48.27; ppl: 13.78; xent: 2.62; lr: 0.00080; 17556/18602 tok/s;   2745 sec
+[2019-04-15 17:32:05,782 INFO] Step 2350/100000; acc:  47.61; ppl: 14.35; xent: 2.66; lr: 0.00082; 17248/18343 tok/s;   2804 sec
+[2019-04-15 17:33:04,524 INFO] Step 2400/100000; acc:  47.70; ppl: 14.13; xent: 2.65; lr: 0.00084; 17091/18987 tok/s;   2863 sec
+[2019-04-15 17:34:02,915 INFO] Step 2450/100000; acc:  49.33; ppl: 12.72; xent: 2.54; lr: 0.00086; 17617/18808 tok/s;   2922 sec
+[2019-04-15 17:35:00,170 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 17:35:07,387 INFO] Step 2500/100000; acc:  49.27; ppl: 12.82; xent: 2.55; lr: 0.00087; 16075/16513 tok/s;   2986 sec
+[2019-04-15 17:36:05,785 INFO] Step 2550/100000; acc:  49.09; ppl: 12.81; xent: 2.55; lr: 0.00089; 16819/18894 tok/s;   3044 sec
+[2019-04-15 17:37:04,076 INFO] Step 2600/100000; acc:  49.45; ppl: 12.52; xent: 2.53; lr: 0.00091; 17426/18924 tok/s;   3103 sec
+[2019-04-15 17:38:02,883 INFO] Step 2650/100000; acc:  49.89; ppl: 12.19; xent: 2.50; lr: 0.00093; 16996/18677 tok/s;   3162 sec
+[2019-04-15 17:39:00,889 INFO] Step 2700/100000; acc:  49.39; ppl: 12.53; xent: 2.53; lr: 0.00094; 17363/18578 tok/s;   3220 sec
+[2019-04-15 17:39:59,866 INFO] Step 2750/100000; acc:  51.97; ppl: 10.75; xent: 2.37; lr: 0.00096; 17732/18544 tok/s;   3279 sec
+[2019-04-15 17:40:58,456 INFO] Step 2800/100000; acc:  51.10; ppl: 11.25; xent: 2.42; lr: 0.00098; 17555/18617 tok/s;   3337 sec
+[2019-04-15 17:41:56,317 INFO] Step 2850/100000; acc:  50.48; ppl: 11.70; xent: 2.46; lr: 0.00100; 17675/18745 tok/s;   3395 sec
+[2019-04-15 17:42:54,920 INFO] Step 2900/100000; acc:  50.37; ppl: 11.73; xent: 2.46; lr: 0.00101; 17138/19019 tok/s;   3454 sec
+[2019-04-15 17:43:53,259 INFO] Step 2950/100000; acc:  51.85; ppl: 10.69; xent: 2.37; lr: 0.00103; 17638/18802 tok/s;   3512 sec
+[2019-04-15 17:44:49,350 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 17:44:57,755 INFO] Step 3000/100000; acc:  51.69; ppl: 10.75; xent: 2.37; lr: 0.00105; 16073/16523 tok/s;   3576 sec
+[2019-04-15 17:44:57,770 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 17:45:05,440 INFO] Validation perplexity: 26.0042
+[2019-04-15 17:45:05,440 INFO] Validation accuracy: 44.4627
+[2019-04-15 17:45:05,440 INFO] Saving checkpoint save/en-de/demo-model_step_3000.pt
+[2019-04-15 17:46:04,625 INFO] Step 3050/100000; acc:  51.56; ppl: 10.81; xent: 2.38; lr: 0.00107; 14618/16516 tok/s;   3643 sec
+[2019-04-15 17:47:02,747 INFO] Step 3100/100000; acc:  51.84; ppl: 10.58; xent: 2.36; lr: 0.00108; 17516/18982 tok/s;   3701 sec
+[2019-04-15 17:48:02,037 INFO] Step 3150/100000; acc:  52.27; ppl: 10.37; xent: 2.34; lr: 0.00110; 16861/18502 tok/s;   3761 sec
+[2019-04-15 17:49:00,272 INFO] Step 3200/100000; acc:  51.56; ppl: 10.75; xent: 2.37; lr: 0.00112; 17324/18529 tok/s;   3819 sec
+[2019-04-15 17:49:59,194 INFO] Step 3250/100000; acc:  53.94; ppl:  9.32; xent: 2.23; lr: 0.00114; 17760/18504 tok/s;   3878 sec
+[2019-04-15 17:50:57,774 INFO] Step 3300/100000; acc:  52.83; ppl:  9.93; xent: 2.30; lr: 0.00115; 17440/18668 tok/s;   3936 sec
+[2019-04-15 17:51:55,780 INFO] Step 3350/100000; acc:  52.46; ppl: 10.15; xent: 2.32; lr: 0.00117; 17683/18678 tok/s;   3994 sec
+[2019-04-15 17:52:54,222 INFO] Step 3400/100000; acc:  52.28; ppl: 10.25; xent: 2.33; lr: 0.00119; 17191/19078 tok/s;   4053 sec
+[2019-04-15 17:53:52,554 INFO] Step 3450/100000; acc:  53.66; ppl:  9.40; xent: 2.24; lr: 0.00121; 17689/18791 tok/s;   4111 sec
+[2019-04-15 17:54:47,356 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 17:54:57,010 INFO] Step 3500/100000; acc:  53.32; ppl:  9.61; xent: 2.26; lr: 0.00122; 16022/16556 tok/s;   4176 sec
+[2019-04-15 17:55:55,301 INFO] Step 3550/100000; acc:  53.29; ppl:  9.57; xent: 2.26; lr: 0.00124; 16843/18929 tok/s;   4234 sec
+[2019-04-15 17:56:53,387 INFO] Step 3600/100000; acc:  53.04; ppl:  9.70; xent: 2.27; lr: 0.00126; 17386/18998 tok/s;   4292 sec
+[2019-04-15 17:57:52,096 INFO] Step 3650/100000; acc:  54.10; ppl:  9.15; xent: 2.21; lr: 0.00128; 17150/18651 tok/s;   4351 sec
+[2019-04-15 17:58:49,961 INFO] Step 3700/100000; acc:  53.18; ppl:  9.62; xent: 2.26; lr: 0.00129; 17403/18706 tok/s;   4409 sec
+[2019-04-15 17:59:48,613 INFO] Step 3750/100000; acc:  55.47; ppl:  8.40; xent: 2.13; lr: 0.00131; 17891/18535 tok/s;   4467 sec
+[2019-04-15 18:00:46,937 INFO] Step 3800/100000; acc:  54.25; ppl:  8.98; xent: 2.20; lr: 0.00133; 17513/18686 tok/s;   4526 sec
+[2019-04-15 18:01:44,937 INFO] Step 3850/100000; acc:  53.94; ppl:  9.16; xent: 2.22; lr: 0.00135; 17638/18802 tok/s;   4584 sec
+[2019-04-15 18:02:43,408 INFO] Step 3900/100000; acc:  53.74; ppl:  9.27; xent: 2.23; lr: 0.00136; 17211/19075 tok/s;   4642 sec
+[2019-04-15 18:03:41,579 INFO] Step 3950/100000; acc:  55.09; ppl:  8.54; xent: 2.14; lr: 0.00138; 17722/18823 tok/s;   4700 sec
+[2019-04-15 18:04:35,012 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 18:04:45,794 INFO] Step 4000/100000; acc:  54.50; ppl:  8.81; xent: 2.18; lr: 0.00140; 16124/16580 tok/s;   4764 sec
+[2019-04-15 18:04:45,810 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 18:04:53,621 INFO] Validation perplexity: 22.7101
+[2019-04-15 18:04:53,621 INFO] Validation accuracy: 46.0995
+[2019-04-15 18:04:53,621 INFO] Saving checkpoint save/en-de/demo-model_step_4000.pt
+[2019-04-15 18:05:52,716 INFO] Step 4050/100000; acc:  54.88; ppl:  8.63; xent: 2.16; lr: 0.00139; 14662/16488 tok/s;   4831 sec
+[2019-04-15 18:06:50,626 INFO] Step 4100/100000; acc:  54.29; ppl:  8.91; xent: 2.19; lr: 0.00138; 17306/18852 tok/s;   4889 sec
+[2019-04-15 18:07:49,457 INFO] Step 4150/100000; acc:  55.69; ppl:  8.23; xent: 2.11; lr: 0.00137; 17244/18830 tok/s;   4948 sec
+[2019-04-15 18:08:47,489 INFO] Step 4200/100000; acc:  54.45; ppl:  8.81; xent: 2.18; lr: 0.00136; 17337/18628 tok/s;   5006 sec
+[2019-04-15 18:09:46,336 INFO] Step 4250/100000; acc:  57.18; ppl:  7.51; xent: 2.02; lr: 0.00136; 17837/18492 tok/s;   5065 sec
+[2019-04-15 18:10:44,673 INFO] Step 4300/100000; acc:  55.68; ppl:  8.17; xent: 2.10; lr: 0.00135; 17520/18648 tok/s;   5123 sec
+[2019-04-15 18:11:42,741 INFO] Step 4350/100000; acc:  55.53; ppl:  8.25; xent: 2.11; lr: 0.00134; 17548/18855 tok/s;   5181 sec
+[2019-04-15 18:12:41,192 INFO] Step 4400/100000; acc:  55.28; ppl:  8.36; xent: 2.12; lr: 0.00133; 17190/18953 tok/s;   5240 sec
+[2019-04-15 18:13:39,280 INFO] Step 4450/100000; acc:  56.94; ppl:  7.56; xent: 2.02; lr: 0.00132; 17848/18953 tok/s;   5298 sec
+[2019-04-15 18:14:31,546 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 18:14:43,519 INFO] Step 4500/100000; acc:  56.36; ppl:  7.82; xent: 2.06; lr: 0.00132; 16104/16583 tok/s;   5362 sec
+[2019-04-15 18:15:41,616 INFO] Step 4550/100000; acc:  56.68; ppl:  7.68; xent: 2.04; lr: 0.00131; 16905/18921 tok/s;   5420 sec
+[2019-04-15 18:16:39,527 INFO] Step 4600/100000; acc:  55.76; ppl:  8.09; xent: 2.09; lr: 0.00130; 17140/18893 tok/s;   5478 sec
+[2019-04-15 18:17:38,309 INFO] Step 4650/100000; acc:  57.74; ppl:  7.24; xent: 1.98; lr: 0.00130; 17409/18814 tok/s;   5537 sec
+[2019-04-15 18:18:36,208 INFO] Step 4700/100000; acc:  56.44; ppl:  7.78; xent: 2.05; lr: 0.00129; 17364/18734 tok/s;   5595 sec
+[2019-04-15 18:19:34,816 INFO] Step 4750/100000; acc:  58.82; ppl:  6.77; xent: 1.91; lr: 0.00128; 17935/18551 tok/s;   5653 sec
+[2019-04-15 18:20:33,155 INFO] Step 4800/100000; acc:  57.30; ppl:  7.38; xent: 2.00; lr: 0.00128; 17449/18671 tok/s;   5712 sec
+[2019-04-15 18:21:31,230 INFO] Step 4850/100000; acc:  57.24; ppl:  7.40; xent: 2.00; lr: 0.00127; 17621/18815 tok/s;   5770 sec
+[2019-04-15 18:22:29,506 INFO] Step 4900/100000; acc:  57.15; ppl:  7.46; xent: 2.01; lr: 0.00126; 17220/19011 tok/s;   5828 sec
+[2019-04-15 18:23:27,807 INFO] Step 4950/100000; acc:  58.55; ppl:  6.84; xent: 1.92; lr: 0.00126; 17769/18936 tok/s;   5886 sec
+[2019-04-15 18:24:18,858 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 18:24:32,011 INFO] Step 5000/100000; acc:  57.78; ppl:  7.13; xent: 1.96; lr: 0.00125; 16076/16582 tok/s;   5951 sec
+[2019-04-15 18:24:32,043 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 18:24:39,630 INFO] Validation perplexity: 19.2274
+[2019-04-15 18:24:39,630 INFO] Validation accuracy: 48.6
+[2019-04-15 18:24:39,630 INFO] Saving checkpoint save/en-de/demo-model_step_5000.pt
+[2019-04-15 18:25:38,576 INFO] Step 5050/100000; acc:  58.00; ppl:  7.04; xent: 1.95; lr: 0.00124; 14744/16404 tok/s;   6017 sec
+[2019-04-15 18:26:36,730 INFO] Step 5100/100000; acc:  57.47; ppl:  7.25; xent: 1.98; lr: 0.00124; 17060/18948 tok/s;   6075 sec
+[2019-04-15 18:27:35,301 INFO] Step 5150/100000; acc:  58.95; ppl:  6.69; xent: 1.90; lr: 0.00123; 17477/18838 tok/s;   6134 sec
+[2019-04-15 18:28:33,222 INFO] Step 5200/100000; acc:  58.36; ppl:  6.91; xent: 1.93; lr: 0.00123; 17412/18757 tok/s;   6192 sec
+[2019-04-15 18:29:31,840 INFO] Step 5250/100000; acc:  60.22; ppl:  6.21; xent: 1.83; lr: 0.00122; 17972/18493 tok/s;   6250 sec
+[2019-04-15 18:30:30,088 INFO] Step 5300/100000; acc:  58.77; ppl:  6.72; xent: 1.91; lr: 0.00121; 17450/18750 tok/s;   6309 sec
+[2019-04-15 18:31:28,127 INFO] Step 5350/100000; acc:  58.62; ppl:  6.79; xent: 1.92; lr: 0.00121; 17596/18849 tok/s;   6367 sec
+[2019-04-15 18:32:26,442 INFO] Step 5400/100000; acc:  58.48; ppl:  6.85; xent: 1.92; lr: 0.00120; 17244/18997 tok/s;   6425 sec
+[2019-04-15 18:33:24,554 INFO] Step 5450/100000; acc:  59.97; ppl:  6.28; xent: 1.84; lr: 0.00120; 17847/18949 tok/s;   6483 sec
+[2019-04-15 18:34:14,402 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 18:34:28,805 INFO] Step 5500/100000; acc:  59.18; ppl:  6.53; xent: 1.88; lr: 0.00119; 16039/16612 tok/s;   6547 sec
+[2019-04-15 18:35:26,818 INFO] Step 5550/100000; acc:  59.40; ppl:  6.48; xent: 1.87; lr: 0.00119; 16946/18801 tok/s;   6605 sec
+[2019-04-15 18:36:24,451 INFO] Step 5600/100000; acc:  58.68; ppl:  6.75; xent: 1.91; lr: 0.00118; 17083/19067 tok/s;   6663 sec
+[2019-04-15 18:37:22,745 INFO] Step 5650/100000; acc:  60.29; ppl:  6.16; xent: 1.82; lr: 0.00118; 17647/18930 tok/s;   6721 sec
+[2019-04-15 18:38:20,831 INFO] Step 5700/100000; acc:  59.75; ppl:  6.34; xent: 1.85; lr: 0.00117; 17376/18685 tok/s;   6779 sec
+[2019-04-15 18:39:19,953 INFO] Step 5750/100000; acc:  61.68; ppl:  5.69; xent: 1.74; lr: 0.00117; 17841/18387 tok/s;   6839 sec
+[2019-04-15 18:40:18,727 INFO] Step 5800/100000; acc:  59.96; ppl:  6.24; xent: 1.83; lr: 0.00116; 17277/18568 tok/s;   6897 sec
+[2019-04-15 18:41:16,880 INFO] Step 5850/100000; acc:  59.70; ppl:  6.35; xent: 1.85; lr: 0.00116; 17526/18790 tok/s;   6956 sec
+[2019-04-15 18:42:15,652 INFO] Step 5900/100000; acc:  59.78; ppl:  6.32; xent: 1.84; lr: 0.00115; 17083/18907 tok/s;   7014 sec
+[2019-04-15 18:43:14,075 INFO] Step 5950/100000; acc:  60.86; ppl:  5.93; xent: 1.78; lr: 0.00115; 17652/18824 tok/s;   7073 sec
+[2019-04-15 18:44:04,406 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 18:44:20,778 INFO] Step 6000/100000; acc:  60.73; ppl:  5.96; xent: 1.78; lr: 0.00114; 15603/16036 tok/s;   7139 sec
+[2019-04-15 18:44:20,809 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 18:44:29,068 INFO] Validation perplexity: 18.4849
+[2019-04-15 18:44:29,068 INFO] Validation accuracy: 49.5682
+[2019-04-15 18:44:29,068 INFO] Saving checkpoint save/en-de/demo-model_step_6000.pt
+[2019-04-15 18:45:28,090 INFO] Step 6050/100000; acc:  60.23; ppl:  6.16; xent: 1.82; lr: 0.00114; 14499/16171 tok/s;   7207 sec
+[2019-04-15 18:46:25,601 INFO] Step 6100/100000; acc:  59.94; ppl:  6.23; xent: 1.83; lr: 0.00113; 17216/19145 tok/s;   7264 sec
+[2019-04-15 18:47:23,918 INFO] Step 6150/100000; acc:  61.34; ppl:  5.78; xent: 1.75; lr: 0.00113; 17647/18884 tok/s;   7323 sec
+[2019-04-15 18:48:21,516 INFO] Step 6200/100000; acc:  61.05; ppl:  5.88; xent: 1.77; lr: 0.00112; 17396/18712 tok/s;   7380 sec
+[2019-04-15 18:49:20,261 INFO] Step 6250/100000; acc:  62.70; ppl:  5.36; xent: 1.68; lr: 0.00112; 18070/18642 tok/s;   7439 sec
+[2019-04-15 18:50:18,391 INFO] Step 6300/100000; acc:  60.75; ppl:  5.94; xent: 1.78; lr: 0.00111; 17330/18725 tok/s;   7497 sec
+[2019-04-15 18:51:16,505 INFO] Step 6350/100000; acc:  61.21; ppl:  5.81; xent: 1.76; lr: 0.00111; 17704/18877 tok/s;   7555 sec
+[2019-04-15 18:52:14,882 INFO] Step 6400/100000; acc:  60.97; ppl:  5.91; xent: 1.78; lr: 0.00110; 17188/19002 tok/s;   7614 sec
+[2019-04-15 18:53:12,755 INFO] Step 6450/100000; acc:  61.77; ppl:  5.62; xent: 1.73; lr: 0.00110; 17801/18987 tok/s;   7671 sec
+[2019-04-15 18:54:00,428 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 18:54:17,196 INFO] Step 6500/100000; acc:  61.85; ppl:  5.57; xent: 1.72; lr: 0.00110; 16153/16642 tok/s;   7736 sec
+[2019-04-15 18:55:14,885 INFO] Step 6550/100000; acc:  61.18; ppl:  5.81; xent: 1.76; lr: 0.00109; 16858/18864 tok/s;   7794 sec
+[2019-04-15 18:56:12,447 INFO] Step 6600/100000; acc:  61.09; ppl:  5.84; xent: 1.76; lr: 0.00109; 17174/19127 tok/s;   7851 sec
+[2019-04-15 18:57:10,758 INFO] Step 6650/100000; acc:  62.58; ppl:  5.38; xent: 1.68; lr: 0.00108; 17709/18878 tok/s;   7909 sec
+[2019-04-15 18:58:08,235 INFO] Step 6700/100000; acc:  62.08; ppl:  5.52; xent: 1.71; lr: 0.00108; 17485/18717 tok/s;   7967 sec
+[2019-04-15 18:59:06,949 INFO] Step 6750/100000; acc:  63.72; ppl:  5.05; xent: 1.62; lr: 0.00108; 18091/18633 tok/s;   8026 sec
+[2019-04-15 19:00:05,029 INFO] Step 6800/100000; acc:  61.84; ppl:  5.58; xent: 1.72; lr: 0.00107; 17344/18765 tok/s;   8084 sec
+[2019-04-15 19:01:03,006 INFO] Step 6850/100000; acc:  62.20; ppl:  5.47; xent: 1.70; lr: 0.00107; 17724/18973 tok/s;   8142 sec
+[2019-04-15 19:02:01,330 INFO] Step 6900/100000; acc:  62.00; ppl:  5.56; xent: 1.72; lr: 0.00106; 17205/18991 tok/s;   8200 sec
+[2019-04-15 19:02:59,159 INFO] Step 6950/100000; acc:  62.71; ppl:  5.32; xent: 1.67; lr: 0.00106; 17767/19031 tok/s;   8258 sec
+[2019-04-15 19:03:45,545 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 19:04:03,682 INFO] Step 7000/100000; acc:  62.72; ppl:  5.30; xent: 1.67; lr: 0.00106; 16088/16610 tok/s;   8322 sec
+[2019-04-15 19:04:03,713 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 19:04:11,305 INFO] Validation perplexity: 18.023
+[2019-04-15 19:04:11,305 INFO] Validation accuracy: 50.3102
+[2019-04-15 19:04:11,305 INFO] Saving checkpoint save/en-de/demo-model_step_7000.pt
+[2019-04-15 19:05:09,910 INFO] Step 7050/100000; acc:  62.47; ppl:  5.41; xent: 1.69; lr: 0.00105; 14752/16438 tok/s;   8389 sec
+[2019-04-15 19:06:07,365 INFO] Step 7100/100000; acc:  62.04; ppl:  5.52; xent: 1.71; lr: 0.00105; 17259/19152 tok/s;   8446 sec
+[2019-04-15 19:07:05,420 INFO] Step 7150/100000; acc:  63.45; ppl:  5.11; xent: 1.63; lr: 0.00105; 17741/18929 tok/s;   8504 sec
+[2019-04-15 19:08:02,838 INFO] Step 7200/100000; acc:  63.32; ppl:  5.16; xent: 1.64; lr: 0.00104; 17506/18749 tok/s;   8561 sec
+[2019-04-15 19:09:01,359 INFO] Step 7250/100000; acc:  64.18; ppl:  4.90; xent: 1.59; lr: 0.00104; 18075/18640 tok/s;   8620 sec
+[2019-04-15 19:09:59,506 INFO] Step 7300/100000; acc:  62.83; ppl:  5.27; xent: 1.66; lr: 0.00103; 17313/18810 tok/s;   8678 sec
+[2019-04-15 19:10:57,501 INFO] Step 7350/100000; acc:  63.41; ppl:  5.12; xent: 1.63; lr: 0.00103; 17800/18991 tok/s;   8736 sec
+[2019-04-15 19:11:55,710 INFO] Step 7400/100000; acc:  62.94; ppl:  5.27; xent: 1.66; lr: 0.00103; 17246/19009 tok/s;   8794 sec
+[2019-04-15 19:12:54,762 INFO] Step 7450/100000; acc:  63.44; ppl:  5.09; xent: 1.63; lr: 0.00102; 17431/18550 tok/s;   8853 sec
+[2019-04-15 19:13:40,454 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 19:13:59,761 INFO] Step 7500/100000; acc:  63.68; ppl:  5.03; xent: 1.61; lr: 0.00102; 15954/16587 tok/s;   8918 sec
+[2019-04-15 19:14:58,120 INFO] Step 7550/100000; acc:  63.32; ppl:  5.15; xent: 1.64; lr: 0.00102; 16732/18642 tok/s;   8977 sec
+[2019-04-15 19:15:55,526 INFO] Step 7600/100000; acc:  63.02; ppl:  5.22; xent: 1.65; lr: 0.00101; 17264/19151 tok/s;   9034 sec
+[2019-04-15 19:16:53,364 INFO] Step 7650/100000; acc:  64.20; ppl:  4.89; xent: 1.59; lr: 0.00101; 17714/18780 tok/s;   9092 sec
+[2019-04-15 19:17:50,957 INFO] Step 7700/100000; acc:  64.36; ppl:  4.88; xent: 1.59; lr: 0.00101; 17540/18935 tok/s;   9150 sec
+[2019-04-15 19:18:49,596 INFO] Step 7750/100000; acc:  65.07; ppl:  4.67; xent: 1.54; lr: 0.00100; 18045/18601 tok/s;   9208 sec
+[2019-04-15 19:19:47,683 INFO] Step 7800/100000; acc:  63.70; ppl:  5.02; xent: 1.61; lr: 0.00100; 17350/18804 tok/s;   9266 sec
+[2019-04-15 19:20:45,726 INFO] Step 7850/100000; acc:  64.18; ppl:  4.90; xent: 1.59; lr: 0.00100; 17760/18941 tok/s;   9324 sec
+[2019-04-15 19:21:44,056 INFO] Step 7900/100000; acc:  63.66; ppl:  5.06; xent: 1.62; lr: 0.00099; 17169/19018 tok/s;   9383 sec
+[2019-04-15 19:22:41,971 INFO] Step 7950/100000; acc:  64.44; ppl:  4.82; xent: 1.57; lr: 0.00099; 17857/18894 tok/s;   9441 sec
+[2019-04-15 19:23:26,195 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 19:23:46,575 INFO] Step 8000/100000; acc:  64.32; ppl:  4.85; xent: 1.58; lr: 0.00099; 15965/16714 tok/s;   9505 sec
+[2019-04-15 19:23:46,591 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 19:23:54,370 INFO] Validation perplexity: 18.226
+[2019-04-15 19:23:54,370 INFO] Validation accuracy: 50.3836
+[2019-04-15 19:23:54,370 INFO] Saving checkpoint save/en-de/demo-model_step_8000.pt
+[2019-04-15 19:24:53,061 INFO] Step 8050/100000; acc:  64.34; ppl:  4.86; xent: 1.58; lr: 0.00099; 14772/16341 tok/s;   9572 sec
+[2019-04-15 19:25:50,520 INFO] Step 8100/100000; acc:  63.99; ppl:  4.97; xent: 1.60; lr: 0.00098; 17204/19131 tok/s;   9629 sec
+[2019-04-15 19:26:48,432 INFO] Step 8150/100000; acc:  64.94; ppl:  4.70; xent: 1.55; lr: 0.00098; 17693/18750 tok/s;   9687 sec
+[2019-04-15 19:27:46,229 INFO] Step 8200/100000; acc:  65.17; ppl:  4.66; xent: 1.54; lr: 0.00098; 17499/18910 tok/s;   9745 sec
+[2019-04-15 19:28:44,862 INFO] Step 8250/100000; acc:  65.78; ppl:  4.48; xent: 1.50; lr: 0.00097; 18044/18589 tok/s;   9804 sec
+[2019-04-15 19:29:43,028 INFO] Step 8300/100000; acc:  64.37; ppl:  4.83; xent: 1.58; lr: 0.00097; 17296/18755 tok/s;   9862 sec
+[2019-04-15 19:30:40,961 INFO] Step 8350/100000; acc:  64.98; ppl:  4.69; xent: 1.55; lr: 0.00097; 17849/18912 tok/s;   9920 sec
+[2019-04-15 19:31:39,464 INFO] Step 8400/100000; acc:  64.47; ppl:  4.84; xent: 1.58; lr: 0.00096; 17064/19044 tok/s;   9978 sec
+[2019-04-15 19:32:37,495 INFO] Step 8450/100000; acc:  65.18; ppl:  4.64; xent: 1.53; lr: 0.00096; 17831/18873 tok/s;  10036 sec
+[2019-04-15 19:33:20,511 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 19:33:42,069 INFO] Step 8500/100000; acc:  65.10; ppl:  4.66; xent: 1.54; lr: 0.00096; 15919/16716 tok/s;  10101 sec
+[2019-04-15 19:34:39,977 INFO] Step 8550/100000; acc:  65.26; ppl:  4.62; xent: 1.53; lr: 0.00096; 17057/18742 tok/s;  10159 sec
+[2019-04-15 19:35:37,610 INFO] Step 8600/100000; acc:  64.56; ppl:  4.80; xent: 1.57; lr: 0.00095; 17050/18897 tok/s;  10216 sec
+[2019-04-15 19:36:35,913 INFO] Step 8650/100000; acc:  65.86; ppl:  4.48; xent: 1.50; lr: 0.00095; 17683/18810 tok/s;  10275 sec
+[2019-04-15 19:37:33,889 INFO] Step 8700/100000; acc:  65.92; ppl:  4.46; xent: 1.50; lr: 0.00095; 17435/18863 tok/s;  10333 sec
+[2019-04-15 19:38:32,689 INFO] Step 8750/100000; acc:  66.50; ppl:  4.31; xent: 1.46; lr: 0.00094; 17983/18495 tok/s;  10391 sec
+[2019-04-15 19:39:30,888 INFO] Step 8800/100000; acc:  64.98; ppl:  4.66; xent: 1.54; lr: 0.00094; 17309/18668 tok/s;  10450 sec
+[2019-04-15 19:40:29,026 INFO] Step 8850/100000; acc:  65.74; ppl:  4.50; xent: 1.50; lr: 0.00094; 17767/18936 tok/s;  10508 sec
+[2019-04-15 19:41:27,496 INFO] Step 8900/100000; acc:  65.09; ppl:  4.68; xent: 1.54; lr: 0.00094; 17033/19011 tok/s;  10566 sec
+[2019-04-15 19:42:25,580 INFO] Step 8950/100000; acc:  65.92; ppl:  4.45; xent: 1.49; lr: 0.00093; 17868/18807 tok/s;  10624 sec
+[2019-04-15 19:43:07,379 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 19:43:30,097 INFO] Step 9000/100000; acc:  65.87; ppl:  4.46; xent: 1.50; lr: 0.00093; 15885/16838 tok/s;  10689 sec
+[2019-04-15 19:43:30,113 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 19:43:37,783 INFO] Validation perplexity: 18.5503
+[2019-04-15 19:43:37,783 INFO] Validation accuracy: 50.4469
+[2019-04-15 19:43:37,783 INFO] Saving checkpoint save/en-de/demo-model_step_9000.pt
+[2019-04-15 19:44:36,641 INFO] Step 9050/100000; acc:  66.10; ppl:  4.42; xent: 1.49; lr: 0.00093; 14873/16271 tok/s;  10755 sec
+[2019-04-15 19:45:34,101 INFO] Step 9100/100000; acc:  65.29; ppl:  4.61; xent: 1.53; lr: 0.00093; 17061/18997 tok/s;  10813 sec
+[2019-04-15 19:46:32,531 INFO] Step 9150/100000; acc:  66.30; ppl:  4.37; xent: 1.47; lr: 0.00092; 17600/18754 tok/s;  10871 sec
+[2019-04-15 19:47:30,463 INFO] Step 9200/100000; acc:  66.85; ppl:  4.26; xent: 1.45; lr: 0.00092; 17488/18694 tok/s;  10929 sec
+[2019-04-15 19:48:29,387 INFO] Step 9250/100000; acc:  67.36; ppl:  4.14; xent: 1.42; lr: 0.00092; 17929/18641 tok/s;  10988 sec
+[2019-04-15 19:49:27,666 INFO] Step 9300/100000; acc:  65.67; ppl:  4.49; xent: 1.50; lr: 0.00092; 17372/18589 tok/s;  11046 sec
+[2019-04-15 19:50:25,741 INFO] Step 9350/100000; acc:  66.28; ppl:  4.38; xent: 1.48; lr: 0.00091; 17634/19007 tok/s;  11104 sec
+[2019-04-15 19:51:24,150 INFO] Step 9400/100000; acc:  66.02; ppl:  4.45; xent: 1.49; lr: 0.00091; 17115/19029 tok/s;  11163 sec
+[2019-04-15 19:52:22,172 INFO] Step 9450/100000; acc:  66.68; ppl:  4.28; xent: 1.45; lr: 0.00091; 17931/18825 tok/s;  11221 sec
+[2019-04-15 19:53:03,034 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 19:53:26,831 INFO] Step 9500/100000; acc:  66.54; ppl:  4.31; xent: 1.46; lr: 0.00091; 15726/16669 tok/s;  11285 sec
+[2019-04-15 19:54:24,666 INFO] Step 9550/100000; acc:  66.83; ppl:  4.26; xent: 1.45; lr: 0.00090; 17284/18781 tok/s;  11343 sec
+[2019-04-15 19:55:22,449 INFO] Step 9600/100000; acc:  66.08; ppl:  4.43; xent: 1.49; lr: 0.00090; 16935/18990 tok/s;  11401 sec
+[2019-04-15 19:56:20,771 INFO] Step 9650/100000; acc:  66.86; ppl:  4.24; xent: 1.45; lr: 0.00090; 17542/18778 tok/s;  11459 sec
+[2019-04-15 19:57:18,673 INFO] Step 9700/100000; acc:  67.51; ppl:  4.11; xent: 1.41; lr: 0.00090; 17546/18675 tok/s;  11517 sec
+[2019-04-15 19:58:17,520 INFO] Step 9750/100000; acc:  67.98; ppl:  4.00; xent: 1.39; lr: 0.00090; 17994/18639 tok/s;  11576 sec
+[2019-04-15 19:59:15,706 INFO] Step 9800/100000; acc:  66.30; ppl:  4.35; xent: 1.47; lr: 0.00089; 17303/18682 tok/s;  11634 sec
+[2019-04-15 20:00:13,704 INFO] Step 9850/100000; acc:  66.89; ppl:  4.23; xent: 1.44; lr: 0.00089; 17711/18948 tok/s;  11692 sec
+[2019-04-15 20:01:12,300 INFO] Step 9900/100000; acc:  66.95; ppl:  4.24; xent: 1.44; lr: 0.00089; 17111/19069 tok/s;  11751 sec
+[2019-04-15 20:02:10,198 INFO] Step 9950/100000; acc:  67.25; ppl:  4.15; xent: 1.42; lr: 0.00089; 17990/18767 tok/s;  11809 sec
+[2019-04-15 20:02:49,858 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 20:03:14,749 INFO] Step 10000/100000; acc:  67.17; ppl:  4.17; xent: 1.43; lr: 0.00088; 15706/16750 tok/s;  11873 sec
+[2019-04-15 20:03:14,765 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 20:03:22,403 INFO] Validation perplexity: 19.1985
+[2019-04-15 20:03:22,403 INFO] Validation accuracy: 50.3021
+[2019-04-15 20:03:22,403 INFO] Saving checkpoint save/en-de/demo-model_step_10000.pt
+[2019-04-15 20:04:21,130 INFO] Step 10050/100000; acc:  67.48; ppl:  4.12; xent: 1.42; lr: 0.00088; 15027/16381 tok/s;  11940 sec
+[2019-04-15 20:05:18,803 INFO] Step 10100/100000; acc:  66.72; ppl:  4.27; xent: 1.45; lr: 0.00088; 17031/19013 tok/s;  11997 sec
+[2019-04-15 20:06:17,191 INFO] Step 10150/100000; acc:  67.56; ppl:  4.10; xent: 1.41; lr: 0.00088; 17512/18784 tok/s;  12056 sec
+[2019-04-15 20:07:15,139 INFO] Step 10200/100000; acc:  68.16; ppl:  3.97; xent: 1.38; lr: 0.00088; 17579/18628 tok/s;  12114 sec
+[2019-04-15 20:08:14,045 INFO] Step 10250/100000; acc:  68.62; ppl:  3.88; xent: 1.35; lr: 0.00087; 17959/18648 tok/s;  12173 sec
+[2019-04-15 20:09:12,394 INFO] Step 10300/100000; acc:  66.96; ppl:  4.21; xent: 1.44; lr: 0.00087; 17235/18635 tok/s;  12231 sec
+[2019-04-15 20:10:10,755 INFO] Step 10350/100000; acc:  67.61; ppl:  4.08; xent: 1.41; lr: 0.00087; 17620/18831 tok/s;  12289 sec
+[2019-04-15 20:11:09,393 INFO] Step 10400/100000; acc:  67.44; ppl:  4.12; xent: 1.42; lr: 0.00087; 17045/19056 tok/s;  12348 sec
+[2019-04-15 20:12:07,209 INFO] Step 10450/100000; acc:  67.92; ppl:  4.01; xent: 1.39; lr: 0.00086; 18046/18716 tok/s;  12406 sec
+[2019-04-15 20:12:45,772 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 20:13:11,907 INFO] Step 10500/100000; acc:  67.70; ppl:  4.05; xent: 1.40; lr: 0.00086; 15678/16766 tok/s;  12471 sec
+[2019-04-15 20:14:09,697 INFO] Step 10550/100000; acc:  68.05; ppl:  3.99; xent: 1.38; lr: 0.00086; 17292/18756 tok/s;  12528 sec
+[2019-04-15 20:15:07,473 INFO] Step 10600/100000; acc:  67.35; ppl:  4.14; xent: 1.42; lr: 0.00086; 16861/18911 tok/s;  12586 sec
+[2019-04-15 20:16:05,928 INFO] Step 10650/100000; acc:  67.99; ppl:  4.01; xent: 1.39; lr: 0.00086; 17541/18899 tok/s;  12645 sec
+[2019-04-15 20:17:03,966 INFO] Step 10700/100000; acc:  68.91; ppl:  3.83; xent: 1.34; lr: 0.00085; 17609/18586 tok/s;  12703 sec
+[2019-04-15 20:18:02,817 INFO] Step 10750/100000; acc:  69.20; ppl:  3.77; xent: 1.33; lr: 0.00085; 17963/18674 tok/s;  12761 sec
+[2019-04-15 20:19:00,931 INFO] Step 10800/100000; acc:  67.54; ppl:  4.08; xent: 1.41; lr: 0.00085; 17348/18646 tok/s;  12820 sec
+[2019-04-15 20:19:58,836 INFO] Step 10850/100000; acc:  68.21; ppl:  3.96; xent: 1.38; lr: 0.00085; 17763/18969 tok/s;  12877 sec
+[2019-04-15 20:20:57,430 INFO] Step 10900/100000; acc:  67.90; ppl:  4.03; xent: 1.39; lr: 0.00085; 16944/19080 tok/s;  12936 sec
+[2019-04-15 20:21:55,232 INFO] Step 10950/100000; acc:  68.46; ppl:  3.91; xent: 1.36; lr: 0.00084; 18035/18751 tok/s;  12994 sec
+[2019-04-15 20:22:32,717 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 20:23:00,010 INFO] Step 11000/100000; acc:  68.59; ppl:  3.87; xent: 1.35; lr: 0.00084; 15730/16736 tok/s;  13059 sec
+[2019-04-15 20:23:00,026 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 20:23:07,774 INFO] Validation perplexity: 19.6193
+[2019-04-15 20:23:07,774 INFO] Validation accuracy: 50.4801
+[2019-04-15 20:23:07,790 INFO] Saving checkpoint save/en-de/demo-model_step_11000.pt
+[2019-04-15 20:24:06,519 INFO] Step 11050/100000; acc:  68.44; ppl:  3.92; xent: 1.37; lr: 0.00084; 14985/16342 tok/s;  13125 sec
+[2019-04-15 20:25:04,173 INFO] Step 11100/100000; acc:  68.13; ppl:  3.99; xent: 1.38; lr: 0.00084; 16973/18915 tok/s;  13183 sec
+[2019-04-15 20:26:02,566 INFO] Step 11150/100000; acc:  68.48; ppl:  3.91; xent: 1.36; lr: 0.00084; 17486/18943 tok/s;  13241 sec
+[2019-04-15 20:27:00,622 INFO] Step 11200/100000; acc:  69.52; ppl:  3.71; xent: 1.31; lr: 0.00084; 17685/18589 tok/s;  13299 sec
+[2019-04-15 20:27:59,552 INFO] Step 11250/100000; acc:  69.53; ppl:  3.70; xent: 1.31; lr: 0.00083; 17830/18644 tok/s;  13358 sec
+[2019-04-15 20:28:57,715 INFO] Step 11300/100000; acc:  68.11; ppl:  3.96; xent: 1.38; lr: 0.00083; 17353/18566 tok/s;  13416 sec
+[2019-04-15 20:29:55,761 INFO] Step 11350/100000; acc:  69.07; ppl:  3.79; xent: 1.33; lr: 0.00083; 17802/18988 tok/s;  13474 sec
+[2019-04-15 20:30:54,140 INFO] Step 11400/100000; acc:  68.40; ppl:  3.93; xent: 1.37; lr: 0.00083; 16935/19152 tok/s;  13533 sec
+[2019-04-15 20:31:51,881 INFO] Step 11450/100000; acc:  68.97; ppl:  3.80; xent: 1.34; lr: 0.00083; 18036/18704 tok/s;  13591 sec
+[2019-04-15 20:32:28,183 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 20:32:56,664 INFO] Step 11500/100000; acc:  69.35; ppl:  3.74; xent: 1.32; lr: 0.00082; 15806/16783 tok/s;  13655 sec
+[2019-04-15 20:33:54,459 INFO] Step 11550/100000; acc:  68.94; ppl:  3.82; xent: 1.34; lr: 0.00082; 17221/18787 tok/s;  13713 sec
+[2019-04-15 20:34:52,292 INFO] Step 11600/100000; acc:  68.78; ppl:  3.86; xent: 1.35; lr: 0.00082; 16953/18870 tok/s;  13771 sec
+[2019-04-15 20:35:50,588 INFO] Step 11650/100000; acc:  68.87; ppl:  3.83; xent: 1.34; lr: 0.00082; 17486/18880 tok/s;  13829 sec
+[2019-04-15 20:36:48,678 INFO] Step 11700/100000; acc:  70.23; ppl:  3.59; xent: 1.28; lr: 0.00082; 17688/18686 tok/s;  13887 sec
+[2019-04-15 20:37:47,237 INFO] Step 11750/100000; acc:  70.00; ppl:  3.62; xent: 1.29; lr: 0.00082; 17929/18694 tok/s;  13946 sec
+[2019-04-15 20:38:45,394 INFO] Step 11800/100000; acc:  68.69; ppl:  3.85; xent: 1.35; lr: 0.00081; 17394/18652 tok/s;  14004 sec
+[2019-04-15 20:39:43,388 INFO] Step 11850/100000; acc:  69.58; ppl:  3.70; xent: 1.31; lr: 0.00081; 17791/19006 tok/s;  14062 sec
+[2019-04-15 20:40:41,631 INFO] Step 11900/100000; acc:  68.91; ppl:  3.84; xent: 1.35; lr: 0.00081; 17005/19081 tok/s;  14120 sec
+[2019-04-15 20:41:39,491 INFO] Step 11950/100000; acc:  69.51; ppl:  3.71; xent: 1.31; lr: 0.00081; 17950/18643 tok/s;  14178 sec
+[2019-04-15 20:42:14,629 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 20:42:44,229 INFO] Step 12000/100000; acc:  69.85; ppl:  3.64; xent: 1.29; lr: 0.00081; 15843/16896 tok/s;  14243 sec
+[2019-04-15 20:42:44,244 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 20:42:51,946 INFO] Validation perplexity: 20.3734
+[2019-04-15 20:42:51,946 INFO] Validation accuracy: 50.4751
+[2019-04-15 20:42:51,961 INFO] Saving checkpoint save/en-de/demo-model_step_12000.pt
+[2019-04-15 20:43:50,543 INFO] Step 12050/100000; acc:  69.37; ppl:  3.74; xent: 1.32; lr: 0.00081; 15016/16364 tok/s;  14309 sec
+[2019-04-15 20:44:48,267 INFO] Step 12100/100000; acc:  69.28; ppl:  3.76; xent: 1.33; lr: 0.00080; 16996/18919 tok/s;  14367 sec
+[2019-04-15 20:45:46,328 INFO] Step 12150/100000; acc:  69.30; ppl:  3.75; xent: 1.32; lr: 0.00080; 17549/18790 tok/s;  14425 sec
+[2019-04-15 20:46:44,626 INFO] Step 12200/100000; acc:  70.71; ppl:  3.51; xent: 1.25; lr: 0.00080; 17579/18805 tok/s;  14483 sec
+[2019-04-15 20:47:44,052 INFO] Step 12250/100000; acc:  70.41; ppl:  3.54; xent: 1.26; lr: 0.00080; 17714/18340 tok/s;  14543 sec
+[2019-04-15 20:48:43,066 INFO] Step 12300/100000; acc:  69.20; ppl:  3.76; xent: 1.32; lr: 0.00080; 17133/18424 tok/s;  14602 sec
+[2019-04-15 20:49:41,139 INFO] Step 12350/100000; acc:  69.97; ppl:  3.63; xent: 1.29; lr: 0.00080; 17762/19017 tok/s;  14660 sec
+[2019-04-15 20:50:39,353 INFO] Step 12400/100000; acc:  69.28; ppl:  3.75; xent: 1.32; lr: 0.00079; 17034/19041 tok/s;  14718 sec
+[2019-04-15 20:51:37,151 INFO] Step 12450/100000; acc:  70.03; ppl:  3.62; xent: 1.29; lr: 0.00079; 17939/18616 tok/s;  14776 sec
+[2019-04-15 20:52:11,290 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 20:52:42,094 INFO] Step 12500/100000; acc:  70.41; ppl:  3.55; xent: 1.27; lr: 0.00079; 15798/16890 tok/s;  14841 sec
+[2019-04-15 20:53:39,946 INFO] Step 12550/100000; acc:  69.88; ppl:  3.65; xent: 1.29; lr: 0.00079; 17203/18793 tok/s;  14899 sec
+[2019-04-15 20:54:37,774 INFO] Step 12600/100000; acc:  69.67; ppl:  3.69; xent: 1.31; lr: 0.00079; 16979/18899 tok/s;  14956 sec
+[2019-04-15 20:55:35,950 INFO] Step 12650/100000; acc:  69.81; ppl:  3.66; xent: 1.30; lr: 0.00079; 17531/18756 tok/s;  15015 sec
+[2019-04-15 20:56:34,253 INFO] Step 12700/100000; acc:  71.15; ppl:  3.42; xent: 1.23; lr: 0.00078; 17586/18774 tok/s;  15073 sec
+[2019-04-15 20:57:32,724 INFO] Step 12750/100000; acc:  70.93; ppl:  3.46; xent: 1.24; lr: 0.00078; 17951/18655 tok/s;  15131 sec
+[2019-04-15 20:58:30,988 INFO] Step 12800/100000; acc:  69.71; ppl:  3.66; xent: 1.30; lr: 0.00078; 17404/18636 tok/s;  15190 sec
+[2019-04-15 20:59:29,102 INFO] Step 12850/100000; acc:  70.36; ppl:  3.56; xent: 1.27; lr: 0.00078; 17752/18991 tok/s;  15248 sec
+[2019-04-15 21:00:27,335 INFO] Step 12900/100000; acc:  69.75; ppl:  3.67; xent: 1.30; lr: 0.00078; 16973/19057 tok/s;  15306 sec
+[2019-04-15 21:01:25,144 INFO] Step 12950/100000; acc:  70.51; ppl:  3.53; xent: 1.26; lr: 0.00078; 17989/18597 tok/s;  15364 sec
+[2019-04-15 21:01:58,027 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 21:02:29,888 INFO] Step 13000/100000; acc:  70.73; ppl:  3.49; xent: 1.25; lr: 0.00078; 15756/16962 tok/s;  15429 sec
+[2019-04-15 21:02:29,904 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 21:02:37,777 INFO] Validation perplexity: 21.1552
+[2019-04-15 21:02:37,777 INFO] Validation accuracy: 50.4288
+[2019-04-15 21:02:37,777 INFO] Saving checkpoint save/en-de/demo-model_step_13000.pt
+[2019-04-15 21:03:36,574 INFO] Step 13050/100000; acc:  70.45; ppl:  3.54; xent: 1.26; lr: 0.00077; 15005/16316 tok/s;  15495 sec
+[2019-04-15 21:04:34,485 INFO] Step 13100/100000; acc:  70.13; ppl:  3.61; xent: 1.28; lr: 0.00077; 16900/18873 tok/s;  15553 sec
+[2019-04-15 21:05:32,739 INFO] Step 13150/100000; acc:  70.28; ppl:  3.57; xent: 1.27; lr: 0.00077; 17570/18723 tok/s;  15611 sec
+[2019-04-15 21:06:31,156 INFO] Step 13200/100000; acc:  71.59; ppl:  3.35; xent: 1.21; lr: 0.00077; 17540/18720 tok/s;  15670 sec
+[2019-04-15 21:07:29,915 INFO] Step 13250/100000; acc:  71.35; ppl:  3.39; xent: 1.22; lr: 0.00077; 17858/18509 tok/s;  15729 sec
+[2019-04-15 21:08:28,069 INFO] Step 13300/100000; acc:  70.06; ppl:  3.60; xent: 1.28; lr: 0.00077; 17376/18750 tok/s;  15787 sec
+[2019-04-15 21:09:26,022 INFO] Step 13350/100000; acc:  70.94; ppl:  3.47; xent: 1.24; lr: 0.00076; 17809/19027 tok/s;  15845 sec
+[2019-04-15 21:10:24,244 INFO] Step 13400/100000; acc:  70.28; ppl:  3.58; xent: 1.28; lr: 0.00076; 16998/18980 tok/s;  15903 sec
+[2019-04-15 21:11:21,875 INFO] Step 13450/100000; acc:  70.85; ppl:  3.47; xent: 1.24; lr: 0.00076; 18031/18736 tok/s;  15961 sec
+[2019-04-15 21:11:53,586 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 21:12:26,613 INFO] Step 13500/100000; acc:  71.43; ppl:  3.39; xent: 1.22; lr: 0.00076; 15641/16855 tok/s;  16025 sec
+[2019-04-15 21:13:24,330 INFO] Step 13550/100000; acc:  70.77; ppl:  3.49; xent: 1.25; lr: 0.00076; 17444/18990 tok/s;  16083 sec
+[2019-04-15 21:14:21,841 INFO] Step 13600/100000; acc:  70.64; ppl:  3.52; xent: 1.26; lr: 0.00076; 17048/19010 tok/s;  16140 sec
+[2019-04-15 21:15:19,888 INFO] Step 13650/100000; acc:  70.73; ppl:  3.50; xent: 1.25; lr: 0.00076; 17633/18779 tok/s;  16199 sec
+[2019-04-15 21:16:18,015 INFO] Step 13700/100000; acc:  72.02; ppl:  3.29; xent: 1.19; lr: 0.00076; 17619/18782 tok/s;  16257 sec
+[2019-04-15 21:17:16,659 INFO] Step 13750/100000; acc:  71.95; ppl:  3.30; xent: 1.19; lr: 0.00075; 17951/18576 tok/s;  16315 sec
+[2019-04-15 21:18:14,950 INFO] Step 13800/100000; acc:  70.57; ppl:  3.52; xent: 1.26; lr: 0.00075; 17288/18702 tok/s;  16374 sec
+[2019-04-15 21:19:13,082 INFO] Step 13850/100000; acc:  71.26; ppl:  3.41; xent: 1.23; lr: 0.00075; 17720/18946 tok/s;  16432 sec
+[2019-04-15 21:20:11,454 INFO] Step 13900/100000; acc:  70.76; ppl:  3.50; xent: 1.25; lr: 0.00075; 17028/18843 tok/s;  16490 sec
+[2019-04-15 21:21:09,360 INFO] Step 13950/100000; acc:  71.33; ppl:  3.39; xent: 1.22; lr: 0.00075; 17953/18749 tok/s;  16548 sec
+[2019-04-15 21:21:39,727 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 21:22:13,688 INFO] Step 14000/100000; acc:  71.80; ppl:  3.33; xent: 1.20; lr: 0.00075; 15745/16914 tok/s;  16612 sec
+[2019-04-15 21:22:13,703 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 21:22:21,280 INFO] Validation perplexity: 21.7217
+[2019-04-15 21:22:21,280 INFO] Validation accuracy: 50.4097
+[2019-04-15 21:22:21,280 INFO] Saving checkpoint save/en-de/demo-model_step_14000.pt
+[2019-04-15 21:23:19,893 INFO] Step 14050/100000; acc:  71.30; ppl:  3.41; xent: 1.23; lr: 0.00075; 15199/16510 tok/s;  16679 sec
+[2019-04-15 21:24:17,757 INFO] Step 14100/100000; acc:  71.16; ppl:  3.44; xent: 1.24; lr: 0.00074; 16904/19014 tok/s;  16736 sec
+[2019-04-15 21:25:15,972 INFO] Step 14150/100000; acc:  71.17; ppl:  3.42; xent: 1.23; lr: 0.00074; 17559/18719 tok/s;  16795 sec
+[2019-04-15 21:26:14,497 INFO] Step 14200/100000; acc:  72.48; ppl:  3.22; xent: 1.17; lr: 0.00074; 17564/18644 tok/s;  16853 sec
+[2019-04-15 21:27:13,683 INFO] Step 14250/100000; acc:  72.30; ppl:  3.24; xent: 1.17; lr: 0.00074; 17788/18419 tok/s;  16912 sec
+[2019-04-15 21:28:12,513 INFO] Step 14300/100000; acc:  71.02; ppl:  3.44; xent: 1.24; lr: 0.00074; 17121/18530 tok/s;  16971 sec
+[2019-04-15 21:29:10,421 INFO] Step 14350/100000; acc:  71.60; ppl:  3.35; xent: 1.21; lr: 0.00074; 17749/19032 tok/s;  17029 sec
+[2019-04-15 21:30:08,399 INFO] Step 14400/100000; acc:  71.14; ppl:  3.43; xent: 1.23; lr: 0.00074; 17126/18924 tok/s;  17087 sec
+[2019-04-15 21:31:06,232 INFO] Step 14450/100000; acc:  71.84; ppl:  3.31; xent: 1.20; lr: 0.00074; 18029/18813 tok/s;  17145 sec
+[2019-04-15 21:31:35,428 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 21:32:10,650 INFO] Step 14500/100000; acc:  72.17; ppl:  3.26; xent: 1.18; lr: 0.00073; 15720/16884 tok/s;  17209 sec
+[2019-04-15 21:33:08,319 INFO] Step 14550/100000; acc:  71.49; ppl:  3.38; xent: 1.22; lr: 0.00073; 17264/18907 tok/s;  17267 sec
+[2019-04-15 21:34:06,397 INFO] Step 14600/100000; acc:  71.67; ppl:  3.36; xent: 1.21; lr: 0.00073; 16955/18996 tok/s;  17325 sec
+[2019-04-15 21:35:04,529 INFO] Step 14650/100000; acc:  71.77; ppl:  3.33; xent: 1.20; lr: 0.00073; 17665/18692 tok/s;  17383 sec
+[2019-04-15 21:36:02,607 INFO] Step 14700/100000; acc:  72.86; ppl:  3.17; xent: 1.15; lr: 0.00073; 17639/18782 tok/s;  17441 sec
+[2019-04-15 21:37:00,992 INFO] Step 14750/100000; acc:  72.74; ppl:  3.18; xent: 1.16; lr: 0.00073; 17998/18727 tok/s;  17500 sec
+[2019-04-15 21:37:59,212 INFO] Step 14800/100000; acc:  71.52; ppl:  3.36; xent: 1.21; lr: 0.00073; 17387/18724 tok/s;  17558 sec
+[2019-04-15 21:38:56,825 INFO] Step 14850/100000; acc:  71.87; ppl:  3.31; xent: 1.20; lr: 0.00073; 17770/19057 tok/s;  17615 sec
+[2019-04-15 21:39:54,939 INFO] Step 14900/100000; acc:  71.74; ppl:  3.34; xent: 1.21; lr: 0.00072; 17174/18920 tok/s;  17674 sec
+[2019-04-15 21:40:52,872 INFO] Step 14950/100000; acc:  72.29; ppl:  3.25; xent: 1.18; lr: 0.00072; 17978/18824 tok/s;  17732 sec
+[2019-04-15 21:41:20,802 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 21:41:57,097 INFO] Step 15000/100000; acc:  72.66; ppl:  3.20; xent: 1.16; lr: 0.00072; 15737/16932 tok/s;  17796 sec
+[2019-04-15 21:41:57,129 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 21:42:04,955 INFO] Validation perplexity: 22.5307
+[2019-04-15 21:42:04,955 INFO] Validation accuracy: 50.274
+[2019-04-15 21:42:04,955 INFO] Saving checkpoint save/en-de/demo-model_step_15000.pt
+[2019-04-15 21:43:03,379 INFO] Step 15050/100000; acc:  71.86; ppl:  3.31; xent: 1.20; lr: 0.00072; 15012/16447 tok/s;  17862 sec

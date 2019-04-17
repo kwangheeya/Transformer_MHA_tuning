@@ -1,0 +1,2406 @@
+[2019-04-15 22:14:29,787 INFO]  * src vocab size = 16216
+[2019-04-15 22:14:29,787 INFO]  * tgt vocab size = 22641
+[2019-04-15 22:14:29,787 INFO] Building model...
+[2019-04-15 22:14:32,443 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(16216, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(22641, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=512, out_features=22641, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2019-04-15 22:14:32,458 INFO] encoder: 30369792
+[2019-04-15 22:14:32,458 INFO] decoder: 54735985
+[2019-04-15 22:14:32,458 INFO] * number of parameters: 85105777
+[2019-04-15 22:14:32,458 INFO] Starting training on GPU: [0]
+[2019-04-15 22:14:32,458 INFO] Start training loop and validate every 1000 steps...
+[2019-04-15 22:14:36,520 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 22:14:56,258 INFO]  * src vocab size = 16216
+[2019-04-15 22:14:56,258 INFO]  * tgt vocab size = 22641
+[2019-04-15 22:14:56,258 INFO] Building model...
+[2019-04-15 22:14:58,867 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(16216, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(22641, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=512, out_features=22641, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2019-04-15 22:14:58,882 INFO] encoder: 30369792
+[2019-04-15 22:14:58,882 INFO] decoder: 54735985
+[2019-04-15 22:14:58,882 INFO] * number of parameters: 85105777
+[2019-04-15 22:14:58,882 INFO] Starting training on GPU: [0]
+[2019-04-15 22:14:58,882 INFO] Start training loop and validate every 1000 steps...
+[2019-04-15 22:15:03,053 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 22:16:11,576 INFO] Step 50/20000; acc:   2.72; ppl: 4931.94; xent: 8.50; lr: 0.00002; 13932/15189 tok/s;     73 sec
+[2019-04-15 22:17:17,064 INFO] Step 100/20000; acc:   4.88; ppl: 2887.15; xent: 7.97; lr: 0.00004; 15220/16512 tok/s;    138 sec
+[2019-04-15 22:18:18,472 INFO]  * src vocab size = 16216
+[2019-04-15 22:18:18,472 INFO]  * tgt vocab size = 22641
+[2019-04-15 22:18:18,472 INFO] Building model...
+[2019-04-15 22:18:21,253 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(16216, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(22641, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=512, out_features=22641, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2019-04-15 22:18:21,268 INFO] encoder: 30369792
+[2019-04-15 22:18:21,268 INFO] decoder: 54735985
+[2019-04-15 22:18:21,268 INFO] * number of parameters: 85105777
+[2019-04-15 22:18:21,268 INFO] Starting training on GPU: [0]
+[2019-04-15 22:18:21,268 INFO] Start training loop and validate every 50 steps...
+[2019-04-15 22:18:25,377 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 22:19:33,710 INFO] Step 50/20000; acc:   3.41; ppl: 5013.43; xent: 8.52; lr: 0.00002; 14295/15084 tok/s;     72 sec
+[2019-04-15 22:19:33,726 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 22:19:40,646 INFO] Validation perplexity: 14106.6
+[2019-04-15 22:19:40,646 INFO] Validation accuracy: 5.25834
+[2019-04-15 22:20:46,287 INFO] Step 100/20000; acc:   7.06; ppl: 2940.05; xent: 7.99; lr: 0.00004; 13869/15273 tok/s;    145 sec
+[2019-04-15 22:20:46,302 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 22:20:54,941 INFO] Validation perplexity: 7345.77
+[2019-04-15 22:20:54,941 INFO] Validation accuracy: 6.87405
+[2019-04-15 22:22:00,816 INFO] Step 150/20000; acc:   8.26; ppl: 1495.30; xent: 7.31; lr: 0.00005; 13530/14806 tok/s;    220 sec
+[2019-04-15 22:22:00,832 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 22:22:09,611 INFO] Validation perplexity: 3444.29
+[2019-04-15 22:22:09,611 INFO] Validation accuracy: 7.89656
+[2019-04-15 22:23:14,939 INFO] Step 200/20000; acc:   9.69; ppl: 802.84; xent: 6.69; lr: 0.00007; 14179/14633 tok/s;    294 sec
+[2019-04-15 22:23:14,955 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 22:23:23,796 INFO] Validation perplexity: 2262.73
+[2019-04-15 22:23:23,796 INFO] Validation accuracy: 8.29772
+[2019-04-15 22:24:29,000 INFO] Step 250/20000; acc:  10.62; ppl: 606.35; xent: 6.41; lr: 0.00009; 13581/14054 tok/s;    368 sec
+[2019-04-15 22:24:29,031 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 22:24:37,810 INFO] Validation perplexity: 1944.55
+[2019-04-15 22:24:37,826 INFO] Validation accuracy: 9.39363
+[2019-04-15 22:25:20,738 INFO]  * src vocab size = 16216
+[2019-04-15 22:25:20,738 INFO]  * tgt vocab size = 22641
+[2019-04-15 22:25:20,738 INFO] Building model...
+[2019-04-15 22:25:23,514 INFO] NMTModel(
+  (encoder): TransformerEncoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(16216, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer): ModuleList(
+      (0): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (1): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (2): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (3): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (4): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+      (5): TransformerEncoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (dropout): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (decoder): TransformerDecoder(
+    (embeddings): Embeddings(
+      (make_embedding): Sequential(
+        (emb_luts): Elementwise(
+          (0): Embedding(22641, 512, padding_idx=1)
+        )
+        (pe): PositionalEncoding(
+          (dropout): Dropout(p=0.1)
+        )
+      )
+    )
+    (transformer_layers): ModuleList(
+      (0): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (1): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (2): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (3): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (4): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+      (5): TransformerDecoderLayer(
+        (self_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (context_attn): MultiHeadedAttention(
+          (linear_keys): Linear(in_features=512, out_features=512, bias=True)
+          (linear_values): Sequential(
+            (0): Linear(in_features=512, out_features=512, bias=True)
+            (1): ReLU()
+            (2): Linear(in_features=512, out_features=512, bias=True)
+            (3): ReLU()
+            (4): Linear(in_features=512, out_features=512, bias=True)
+            (5): ReLU()
+          )
+          (linear_query): Linear(in_features=512, out_features=512, bias=True)
+          (softmax): Softmax()
+          (dropout): Dropout(p=0.1)
+          (final_linear): Linear(in_features=512, out_features=512, bias=True)
+        )
+        (feed_forward): PositionwiseFeedForward(
+          (w_1): Linear(in_features=512, out_features=2048, bias=True)
+          (w_2): Linear(in_features=2048, out_features=512, bias=True)
+          (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+          (dropout_1): Dropout(p=0.1)
+          (relu): ReLU()
+          (dropout_2): Dropout(p=0.1)
+        )
+        (layer_norm_1): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (layer_norm_2): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+        (drop): Dropout(p=0.1)
+      )
+    )
+    (layer_norm): LayerNorm(torch.Size([512]), eps=1e-06, elementwise_affine=True)
+  )
+  (generator): Sequential(
+    (0): Linear(in_features=512, out_features=22641, bias=True)
+    (1): Cast()
+    (2): LogSoftmax()
+  )
+)
+[2019-04-15 22:25:23,529 INFO] encoder: 30369792
+[2019-04-15 22:25:23,529 INFO] decoder: 54735985
+[2019-04-15 22:25:23,529 INFO] * number of parameters: 85105777
+[2019-04-15 22:25:23,545 INFO] Starting training on GPU: [0]
+[2019-04-15 22:25:23,545 INFO] Start training loop and validate every 1000 steps...
+[2019-04-15 22:25:27,591 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 22:26:35,559 INFO] Step 50/20000; acc:   3.08; ppl: 4998.77; xent: 8.52; lr: 0.00002; 13770/15211 tok/s;     72 sec
+[2019-04-15 22:27:41,497 INFO] Step 100/20000; acc:   6.56; ppl: 2952.92; xent: 7.99; lr: 0.00004; 15500/16469 tok/s;    138 sec
+[2019-04-15 22:28:47,419 INFO] Step 150/20000; acc:   9.01; ppl: 1475.81; xent: 7.30; lr: 0.00005; 15466/16706 tok/s;    204 sec
+[2019-04-15 22:29:54,059 INFO] Step 200/20000; acc:  10.20; ppl: 813.33; xent: 6.70; lr: 0.00007; 14830/16944 tok/s;    271 sec
+[2019-04-15 22:30:59,591 INFO] Step 250/20000; acc:  10.75; ppl: 614.41; xent: 6.42; lr: 0.00009; 15171/16737 tok/s;    336 sec
+[2019-04-15 22:32:04,997 INFO] Step 300/20000; acc:  11.98; ppl: 506.80; xent: 6.23; lr: 0.00011; 15758/16414 tok/s;    401 sec
+[2019-04-15 22:33:11,596 INFO] Step 350/20000; acc:  12.54; ppl: 381.34; xent: 5.94; lr: 0.00012; 15492/16364 tok/s;    468 sec
+[2019-04-15 22:34:18,174 INFO] Step 400/20000; acc:  13.13; ppl: 310.13; xent: 5.74; lr: 0.00014; 15508/16326 tok/s;    535 sec
+[2019-04-15 22:35:23,737 INFO] Step 450/20000; acc:  14.09; ppl: 262.50; xent: 5.57; lr: 0.00016; 15719/16210 tok/s;    600 sec
+[2019-04-15 22:36:33,689 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 22:36:36,641 INFO] Step 500/20000; acc:  14.42; ppl: 237.79; xent: 5.47; lr: 0.00018; 14133/15172 tok/s;    673 sec
+[2019-04-15 22:37:42,891 INFO] Step 550/20000; acc:  15.11; ppl: 209.72; xent: 5.35; lr: 0.00019; 14945/16558 tok/s;    739 sec
+[2019-04-15 22:38:48,969 INFO] Step 600/20000; acc:  15.73; ppl: 189.99; xent: 5.25; lr: 0.00021; 15426/16450 tok/s;    805 sec
+[2019-04-15 22:39:55,219 INFO] Step 650/20000; acc:  16.44; ppl: 172.96; xent: 5.15; lr: 0.00023; 15464/16615 tok/s;    872 sec
+[2019-04-15 22:41:01,672 INFO] Step 700/20000; acc:  17.14; ppl: 159.41; xent: 5.07; lr: 0.00024; 14760/16968 tok/s;    938 sec
+[2019-04-15 22:42:07,360 INFO] Step 750/20000; acc:  18.01; ppl: 143.47; xent: 4.97; lr: 0.00026; 15213/16735 tok/s;   1004 sec
+[2019-04-15 22:43:12,423 INFO] Step 800/20000; acc:  18.42; ppl: 133.02; xent: 4.89; lr: 0.00028; 15845/16408 tok/s;   1069 sec
+[2019-04-15 22:44:19,079 INFO] Step 850/20000; acc:  19.44; ppl: 118.39; xent: 4.77; lr: 0.00030; 15493/16432 tok/s;   1136 sec
+[2019-04-15 22:45:25,501 INFO] Step 900/20000; acc:  20.08; ppl: 108.93; xent: 4.69; lr: 0.00031; 15497/16364 tok/s;   1202 sec
+[2019-04-15 22:46:30,938 INFO] Step 950/20000; acc:  21.46; ppl: 97.53; xent: 4.58; lr: 0.00033; 15632/16103 tok/s;   1267 sec
+[2019-04-15 22:47:39,453 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 22:47:43,624 INFO] Step 1000/20000; acc:  22.15; ppl: 89.28; xent: 4.49; lr: 0.00035; 14301/15286 tok/s;   1340 sec
+[2019-04-15 22:47:43,640 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 22:47:50,888 INFO] Validation perplexity: 281.691
+[2019-04-15 22:47:50,888 INFO] Validation accuracy: 16.8468
+[2019-04-15 22:47:50,888 INFO] Saving checkpoint save/en-de/demo-model2_step_1000.pt
+[2019-04-15 22:48:58,232 INFO] Step 1050/20000; acc:  23.10; ppl: 81.11; xent: 4.40; lr: 0.00037; 13287/14722 tok/s;   1415 sec
+[2019-04-15 22:50:04,138 INFO] Step 1100/20000; acc:  24.48; ppl: 72.61; xent: 4.29; lr: 0.00038; 15478/16497 tok/s;   1481 sec
+[2019-04-15 22:51:10,154 INFO] Step 1150/20000; acc:  25.30; ppl: 67.07; xent: 4.21; lr: 0.00040; 15427/16626 tok/s;   1547 sec
+[2019-04-15 22:52:16,591 INFO] Step 1200/20000; acc:  26.20; ppl: 61.99; xent: 4.13; lr: 0.00042; 14812/17051 tok/s;   1613 sec
+[2019-04-15 22:53:22,373 INFO] Step 1250/20000; acc:  27.40; ppl: 56.72; xent: 4.04; lr: 0.00044; 15237/16630 tok/s;   1679 sec
+[2019-04-15 22:54:27,404 INFO] Step 1300/20000; acc:  27.44; ppl: 54.77; xent: 4.00; lr: 0.00045; 15673/16471 tok/s;   1744 sec
+[2019-04-15 22:55:34,123 INFO] Step 1350/20000; acc:  29.09; ppl: 48.05; xent: 3.87; lr: 0.00047; 15581/16392 tok/s;   1811 sec
+[2019-04-15 22:56:40,544 INFO] Step 1400/20000; acc:  29.84; ppl: 45.03; xent: 3.81; lr: 0.00049; 15543/16421 tok/s;   1877 sec
+[2019-04-15 22:57:45,920 INFO] Step 1450/20000; acc:  30.86; ppl: 42.11; xent: 3.74; lr: 0.00051; 15611/16106 tok/s;   1942 sec
+[2019-04-15 22:58:53,060 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 22:58:58,606 INFO] Step 1500/20000; acc:  31.57; ppl: 39.21; xent: 3.67; lr: 0.00052; 14368/15232 tok/s;   2015 sec
+[2019-04-15 23:00:04,652 INFO] Step 1550/20000; acc:  32.85; ppl: 36.03; xent: 3.58; lr: 0.00054; 14978/16660 tok/s;   2081 sec
+[2019-04-15 23:01:10,559 INFO] Step 1600/20000; acc:  33.76; ppl: 33.66; xent: 3.52; lr: 0.00056; 15436/16490 tok/s;   2147 sec
+[2019-04-15 23:02:16,590 INFO] Step 1650/20000; acc:  34.34; ppl: 32.19; xent: 3.47; lr: 0.00058; 15425/16668 tok/s;   2213 sec
+[2019-04-15 23:03:23,184 INFO] Step 1700/20000; acc:  35.28; ppl: 30.33; xent: 3.41; lr: 0.00059; 14746/17001 tok/s;   2280 sec
+[2019-04-15 23:04:28,637 INFO] Step 1750/20000; acc:  36.57; ppl: 27.92; xent: 3.33; lr: 0.00061; 15307/16712 tok/s;   2345 sec
+[2019-04-15 23:05:33,575 INFO] Step 1800/20000; acc:  36.34; ppl: 27.95; xent: 3.33; lr: 0.00063; 15801/16449 tok/s;   2410 sec
+[2019-04-15 23:06:40,059 INFO] Step 1850/20000; acc:  38.55; ppl: 24.24; xent: 3.19; lr: 0.00065; 15527/16412 tok/s;   2477 sec
+[2019-04-15 23:07:46,293 INFO] Step 1900/20000; acc:  39.12; ppl: 23.21; xent: 3.14; lr: 0.00066; 15653/16540 tok/s;   2543 sec
+[2019-04-15 23:08:51,481 INFO] Step 1950/20000; acc:  39.75; ppl: 22.44; xent: 3.11; lr: 0.00068; 15644/16101 tok/s;   2608 sec
+[2019-04-15 23:09:57,263 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 23:10:04,167 INFO] Step 2000/20000; acc:  40.87; ppl: 20.68; xent: 3.03; lr: 0.00070; 14392/15290 tok/s;   2681 sec
+[2019-04-15 23:10:04,198 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 23:10:12,571 INFO] Validation perplexity: 56.4462
+[2019-04-15 23:10:12,571 INFO] Validation accuracy: 33.0119
+[2019-04-15 23:10:12,571 INFO] Saving checkpoint save/en-de/demo-model2_step_2000.pt
+[2019-04-15 23:11:19,524 INFO] Step 2050/20000; acc:  42.05; ppl: 19.34; xent: 2.96; lr: 0.00072; 13124/14606 tok/s;   2756 sec
+[2019-04-15 23:12:25,243 INFO] Step 2100/20000; acc:  42.53; ppl: 18.70; xent: 2.93; lr: 0.00073; 15476/16524 tok/s;   2822 sec
+[2019-04-15 23:13:31,306 INFO] Step 2150/20000; acc:  42.62; ppl: 18.59; xent: 2.92; lr: 0.00075; 15392/16667 tok/s;   2888 sec
+[2019-04-15 23:14:37,524 INFO] Step 2200/20000; acc:  43.07; ppl: 18.19; xent: 2.90; lr: 0.00077; 14795/17052 tok/s;   2954 sec
+[2019-04-15 23:15:43,040 INFO] Step 2250/20000; acc:  43.76; ppl: 17.30; xent: 2.85; lr: 0.00079; 15288/16718 tok/s;   3019 sec
+[2019-04-15 23:16:48,244 INFO] Step 2300/20000; acc:  43.35; ppl: 17.57; xent: 2.87; lr: 0.00080; 15784/16336 tok/s;   3085 sec
+[2019-04-15 23:17:54,688 INFO] Step 2350/20000; acc:  45.11; ppl: 15.75; xent: 2.76; lr: 0.00082; 15591/16397 tok/s;   3151 sec
+[2019-04-15 23:19:00,922 INFO] Step 2400/20000; acc:  45.44; ppl: 15.45; xent: 2.74; lr: 0.00084; 15572/16624 tok/s;   3217 sec
+[2019-04-15 23:20:05,985 INFO] Step 2450/20000; acc:  45.81; ppl: 15.10; xent: 2.71; lr: 0.00086; 15665/16127 tok/s;   3282 sec
+[2019-04-15 23:21:10,439 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 23:21:18,640 INFO] Step 2500/20000; acc:  46.61; ppl: 14.27; xent: 2.66; lr: 0.00087; 14472/15300 tok/s;   3355 sec
+[2019-04-15 23:22:24,546 INFO] Step 2550/20000; acc:  47.15; ppl: 13.87; xent: 2.63; lr: 0.00089; 15007/16681 tok/s;   3421 sec
+[2019-04-15 23:23:30,140 INFO] Step 2600/20000; acc:  47.42; ppl: 13.57; xent: 2.61; lr: 0.00091; 15506/16521 tok/s;   3487 sec
+[2019-04-15 23:24:36,265 INFO] Step 2650/20000; acc:  47.18; ppl: 13.79; xent: 2.62; lr: 0.00093; 15305/16724 tok/s;   3553 sec
+[2019-04-15 23:25:42,609 INFO] Step 2700/20000; acc:  47.27; ppl: 13.81; xent: 2.63; lr: 0.00094; 14813/16990 tok/s;   3619 sec
+[2019-04-15 23:26:47,875 INFO] Step 2750/20000; acc:  47.70; ppl: 13.38; xent: 2.59; lr: 0.00096; 15361/16683 tok/s;   3684 sec
+[2019-04-15 23:27:52,906 INFO] Step 2800/20000; acc:  47.13; ppl: 13.67; xent: 2.62; lr: 0.00098; 15809/16491 tok/s;   3749 sec
+[2019-04-15 23:28:59,047 INFO] Step 2850/20000; acc:  48.37; ppl: 12.63; xent: 2.54; lr: 0.00100; 15698/16428 tok/s;   3816 sec
+[2019-04-15 23:30:05,141 INFO] Step 2900/20000; acc:  48.77; ppl: 12.36; xent: 2.51; lr: 0.00101; 15534/16657 tok/s;   3882 sec
+[2019-04-15 23:31:10,313 INFO] Step 2950/20000; acc:  49.05; ppl: 12.15; xent: 2.50; lr: 0.00103; 15708/16079 tok/s;   3947 sec
+[2019-04-15 23:32:13,563 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 23:32:22,905 INFO] Step 3000/20000; acc:  49.77; ppl: 11.60; xent: 2.45; lr: 0.00105; 14303/15244 tok/s;   4019 sec
+[2019-04-15 23:32:22,920 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 23:32:31,528 INFO] Validation perplexity: 32.3101
+[2019-04-15 23:32:31,528 INFO] Validation accuracy: 41.2302
+[2019-04-15 23:32:31,528 INFO] Saving checkpoint save/en-de/demo-model2_step_3000.pt
+[2019-04-15 23:33:38,545 INFO] Step 3050/20000; acc:  50.02; ppl: 11.48; xent: 2.44; lr: 0.00107; 13227/14629 tok/s;   4095 sec
+[2019-04-15 23:34:43,951 INFO] Step 3100/20000; acc:  50.03; ppl: 11.44; xent: 2.44; lr: 0.00108; 15439/16564 tok/s;   4160 sec
+[2019-04-15 23:35:50,092 INFO] Step 3150/20000; acc:  50.13; ppl: 11.34; xent: 2.43; lr: 0.00110; 15440/16754 tok/s;   4227 sec
+[2019-04-15 23:36:56,233 INFO] Step 3200/20000; acc:  49.88; ppl: 11.61; xent: 2.45; lr: 0.00112; 14821/17065 tok/s;   4293 sec
+[2019-04-15 23:38:01,514 INFO] Step 3250/20000; acc:  49.92; ppl: 11.49; xent: 2.44; lr: 0.00114; 15328/16680 tok/s;   4358 sec
+[2019-04-15 23:39:06,608 INFO] Step 3300/20000; acc:  49.45; ppl: 11.70; xent: 2.46; lr: 0.00115; 15771/16462 tok/s;   4423 sec
+[2019-04-15 23:40:12,936 INFO] Step 3350/20000; acc:  50.78; ppl: 10.76; xent: 2.38; lr: 0.00117; 15708/16356 tok/s;   4489 sec
+[2019-04-15 23:41:19,202 INFO] Step 3400/20000; acc:  51.16; ppl: 10.58; xent: 2.36; lr: 0.00119; 15511/16633 tok/s;   4556 sec
+[2019-04-15 23:42:24,530 INFO] Step 3450/20000; acc:  51.07; ppl: 10.60; xent: 2.36; lr: 0.00121; 15678/16045 tok/s;   4621 sec
+[2019-04-15 23:43:26,406 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 23:43:37,075 INFO] Step 3500/20000; acc:  51.77; ppl: 10.17; xent: 2.32; lr: 0.00122; 14292/15230 tok/s;   4694 sec
+[2019-04-15 23:44:42,904 INFO] Step 3550/20000; acc:  51.92; ppl: 10.11; xent: 2.31; lr: 0.00124; 15144/16844 tok/s;   4759 sec
+[2019-04-15 23:45:48,279 INFO] Step 3600/20000; acc:  52.08; ppl:  9.98; xent: 2.30; lr: 0.00126; 15529/16547 tok/s;   4825 sec
+[2019-04-15 23:46:54,451 INFO] Step 3650/20000; acc:  52.02; ppl: 10.01; xent: 2.30; lr: 0.00128; 15375/16765 tok/s;   4891 sec
+[2019-04-15 23:48:00,513 INFO] Step 3700/20000; acc:  51.67; ppl: 10.29; xent: 2.33; lr: 0.00129; 14892/17067 tok/s;   4957 sec
+[2019-04-15 23:49:05,685 INFO] Step 3750/20000; acc:  51.17; ppl: 10.50; xent: 2.35; lr: 0.00131; 15235/16726 tok/s;   5022 sec
+[2019-04-15 23:50:11,076 INFO] Step 3800/20000; acc:  51.10; ppl: 10.47; xent: 2.35; lr: 0.00133; 15831/16268 tok/s;   5088 sec
+[2019-04-15 23:51:18,748 INFO] Step 3850/20000; acc:  52.68; ppl:  9.52; xent: 2.25; lr: 0.00135; 15352/16148 tok/s;   5155 sec
+[2019-04-15 23:52:25,810 INFO] Step 3900/20000; acc:  52.69; ppl:  9.55; xent: 2.26; lr: 0.00136; 15303/16434 tok/s;   5222 sec
+[2019-04-15 23:53:31,185 INFO] Step 3950/20000; acc:  52.61; ppl:  9.54; xent: 2.26; lr: 0.00138; 15672/16042 tok/s;   5288 sec
+[2019-04-15 23:54:31,733 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-15 23:54:43,684 INFO] Step 4000/20000; acc:  52.94; ppl:  9.37; xent: 2.24; lr: 0.00140; 14260/15232 tok/s;   5360 sec
+[2019-04-15 23:54:43,699 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-15 23:54:52,275 INFO] Validation perplexity: 26.701
+[2019-04-15 23:54:52,275 INFO] Validation accuracy: 44.0555
+[2019-04-15 23:54:52,275 INFO] Saving checkpoint save/en-de/demo-model2_step_4000.pt
+[2019-04-15 23:55:59,135 INFO] Step 4050/20000; acc:  53.39; ppl:  9.18; xent: 2.22; lr: 0.00139; 13192/14653 tok/s;   5436 sec
+[2019-04-15 23:57:04,838 INFO] Step 4100/20000; acc:  53.96; ppl:  8.82; xent: 2.18; lr: 0.00138; 15566/16525 tok/s;   5501 sec
+[2019-04-15 23:58:10,963 INFO] Step 4150/20000; acc:  53.53; ppl:  9.07; xent: 2.21; lr: 0.00137; 15397/16750 tok/s;   5567 sec
+[2019-04-15 23:59:17,041 INFO] Step 4200/20000; acc:  53.09; ppl:  9.36; xent: 2.24; lr: 0.00136; 14751/16981 tok/s;   5633 sec
+[2019-04-16 00:00:22,338 INFO] Step 4250/20000; acc:  52.69; ppl:  9.49; xent: 2.25; lr: 0.00136; 15350/16713 tok/s;   5699 sec
+[2019-04-16 00:01:27,416 INFO] Step 4300/20000; acc:  53.01; ppl:  9.29; xent: 2.23; lr: 0.00135; 15884/16422 tok/s;   5764 sec
+[2019-04-16 00:02:33,666 INFO] Step 4350/20000; acc:  54.38; ppl:  8.56; xent: 2.15; lr: 0.00134; 15671/16476 tok/s;   5830 sec
+[2019-04-16 00:03:39,823 INFO] Step 4400/20000; acc:  54.57; ppl:  8.48; xent: 2.14; lr: 0.00133; 15498/16694 tok/s;   5896 sec
+[2019-04-16 00:04:44,901 INFO] Step 4450/20000; acc:  54.35; ppl:  8.52; xent: 2.14; lr: 0.00132; 15755/16093 tok/s;   5961 sec
+[2019-04-16 00:05:44,168 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 00:05:57,415 INFO] Step 4500/20000; acc:  54.91; ppl:  8.29; xent: 2.12; lr: 0.00132; 14249/15212 tok/s;   6034 sec
+[2019-04-16 00:07:03,478 INFO] Step 4550/20000; acc:  55.24; ppl:  8.15; xent: 2.10; lr: 0.00131; 15091/16716 tok/s;   6100 sec
+[2019-04-16 00:08:09,259 INFO] Step 4600/20000; acc:  55.93; ppl:  7.80; xent: 2.05; lr: 0.00130; 15549/16536 tok/s;   6166 sec
+[2019-04-16 00:09:15,447 INFO] Step 4650/20000; acc:  55.44; ppl:  8.05; xent: 2.09; lr: 0.00130; 15351/16750 tok/s;   6232 sec
+[2019-04-16 00:10:21,462 INFO] Step 4700/20000; acc:  54.99; ppl:  8.30; xent: 2.12; lr: 0.00129; 14777/16992 tok/s;   6298 sec
+[2019-04-16 00:11:26,634 INFO] Step 4750/20000; acc:  54.42; ppl:  8.50; xent: 2.14; lr: 0.00128; 15414/16670 tok/s;   6363 sec
+[2019-04-16 00:12:31,697 INFO] Step 4800/20000; acc:  54.86; ppl:  8.27; xent: 2.11; lr: 0.00128; 15826/16471 tok/s;   6428 sec
+[2019-04-16 00:13:38,009 INFO] Step 4850/20000; acc:  56.11; ppl:  7.69; xent: 2.04; lr: 0.00127; 15723/16477 tok/s;   6494 sec
+[2019-04-16 00:14:44,181 INFO] Step 4900/20000; acc:  56.29; ppl:  7.61; xent: 2.03; lr: 0.00126; 15475/16617 tok/s;   6561 sec
+[2019-04-16 00:15:49,369 INFO] Step 4950/20000; acc:  56.13; ppl:  7.65; xent: 2.04; lr: 0.00126; 15645/16168 tok/s;   6626 sec
+[2019-04-16 00:16:47,012 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 00:17:01,571 INFO] Step 5000/20000; acc:  56.76; ppl:  7.39; xent: 2.00; lr: 0.00125; 14387/15269 tok/s;   6698 sec
+[2019-04-16 00:17:01,602 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 00:17:10,131 INFO] Validation perplexity: 23.051
+[2019-04-16 00:17:10,131 INFO] Validation accuracy: 46.017
+[2019-04-16 00:17:10,131 INFO] Saving checkpoint save/en-de/demo-model2_step_5000.pt
+[2019-04-16 00:18:16,772 INFO] Step 5050/20000; acc:  56.79; ppl:  7.40; xent: 2.00; lr: 0.00124; 13248/14693 tok/s;   6773 sec
+[2019-04-16 00:19:22,428 INFO] Step 5100/20000; acc:  57.55; ppl:  7.08; xent: 1.96; lr: 0.00124; 15603/16505 tok/s;   6839 sec
+[2019-04-16 00:20:28,631 INFO] Step 5150/20000; acc:  57.00; ppl:  7.32; xent: 1.99; lr: 0.00123; 15333/16799 tok/s;   6905 sec
+[2019-04-16 00:21:34,381 INFO] Step 5200/20000; acc:  56.31; ppl:  7.66; xent: 2.04; lr: 0.00123; 14853/16996 tok/s;   6971 sec
+[2019-04-16 00:22:39,507 INFO] Step 5250/20000; acc:  55.85; ppl:  7.74; xent: 2.05; lr: 0.00122; 15423/16695 tok/s;   7036 sec
+[2019-04-16 00:23:44,694 INFO] Step 5300/20000; acc:  56.20; ppl:  7.60; xent: 2.03; lr: 0.00121; 15678/16493 tok/s;   7101 sec
+[2019-04-16 00:24:51,116 INFO] Step 5350/20000; acc:  57.91; ppl:  6.89; xent: 1.93; lr: 0.00121; 15757/16461 tok/s;   7168 sec
+[2019-04-16 00:25:56,788 INFO] Step 5400/20000; acc:  57.73; ppl:  7.00; xent: 1.95; lr: 0.00120; 15649/16605 tok/s;   7233 sec
+[2019-04-16 00:27:02,116 INFO] Step 5450/20000; acc:  57.37; ppl:  7.09; xent: 1.96; lr: 0.00120; 15511/16263 tok/s;   7299 sec
+[2019-04-16 00:27:58,587 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 00:28:14,584 INFO] Step 5500/20000; acc:  58.33; ppl:  6.73; xent: 1.91; lr: 0.00119; 14401/15225 tok/s;   7371 sec
+[2019-04-16 00:29:20,474 INFO] Step 5550/20000; acc:  58.26; ppl:  6.79; xent: 1.92; lr: 0.00119; 15131/16744 tok/s;   7437 sec
+[2019-04-16 00:30:25,896 INFO] Step 5600/20000; acc:  58.71; ppl:  6.60; xent: 1.89; lr: 0.00118; 15615/16590 tok/s;   7502 sec
+[2019-04-16 00:31:32,084 INFO] Step 5650/20000; acc:  58.08; ppl:  6.86; xent: 1.93; lr: 0.00118; 15310/16783 tok/s;   7569 sec
+[2019-04-16 00:32:37,834 INFO] Step 5700/20000; acc:  57.70; ppl:  7.04; xent: 1.95; lr: 0.00117; 14936/16917 tok/s;   7634 sec
+[2019-04-16 00:33:42,959 INFO] Step 5750/20000; acc:  57.14; ppl:  7.19; xent: 1.97; lr: 0.00117; 15423/16726 tok/s;   7699 sec
+[2019-04-16 00:34:47,960 INFO] Step 5800/20000; acc:  57.42; ppl:  7.07; xent: 1.96; lr: 0.00116; 15637/16598 tok/s;   7764 sec
+[2019-04-16 00:35:54,600 INFO] Step 5850/20000; acc:  59.35; ppl:  6.33; xent: 1.85; lr: 0.00116; 15765/16411 tok/s;   7831 sec
+[2019-04-16 00:37:00,210 INFO] Step 5900/20000; acc:  58.74; ppl:  6.57; xent: 1.88; lr: 0.00115; 15660/16590 tok/s;   7897 sec
+[2019-04-16 00:38:05,553 INFO] Step 5950/20000; acc:  58.57; ppl:  6.59; xent: 1.89; lr: 0.00115; 15534/16234 tok/s;   7962 sec
+[2019-04-16 00:39:00,837 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 00:39:18,177 INFO] Step 6000/20000; acc:  59.43; ppl:  6.30; xent: 1.84; lr: 0.00114; 14357/15237 tok/s;   8035 sec
+[2019-04-16 00:39:18,193 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 00:39:26,691 INFO] Validation perplexity: 22.313
+[2019-04-16 00:39:26,691 INFO] Validation accuracy: 46.9832
+[2019-04-16 00:39:26,691 INFO] Saving checkpoint save/en-de/demo-model2_step_6000.pt
+[2019-04-16 00:40:33,425 INFO] Step 6050/20000; acc:  59.30; ppl:  6.38; xent: 1.85; lr: 0.00114; 13261/14673 tok/s;   8110 sec
+[2019-04-16 00:41:38,675 INFO] Step 6100/20000; acc:  59.84; ppl:  6.18; xent: 1.82; lr: 0.00113; 15658/16586 tok/s;   8175 sec
+[2019-04-16 00:42:44,847 INFO] Step 6150/20000; acc:  58.99; ppl:  6.49; xent: 1.87; lr: 0.00113; 15229/16790 tok/s;   8241 sec
+[2019-04-16 00:43:50,675 INFO] Step 6200/20000; acc:  58.81; ppl:  6.57; xent: 1.88; lr: 0.00112; 14972/16938 tok/s;   8307 sec
+[2019-04-16 00:44:55,691 INFO] Step 6250/20000; acc:  58.42; ppl:  6.69; xent: 1.90; lr: 0.00112; 15468/16652 tok/s;   8372 sec
+[2019-04-16 00:46:01,004 INFO] Step 6300/20000; acc:  58.65; ppl:  6.57; xent: 1.88; lr: 0.00111; 15560/16584 tok/s;   8437 sec
+[2019-04-16 00:47:07,675 INFO] Step 6350/20000; acc:  60.30; ppl:  6.01; xent: 1.79; lr: 0.00111; 15646/16371 tok/s;   8504 sec
+[2019-04-16 00:48:13,441 INFO] Step 6400/20000; acc:  59.97; ppl:  6.12; xent: 1.81; lr: 0.00110; 15648/16520 tok/s;   8570 sec
+[2019-04-16 00:49:18,613 INFO] Step 6450/20000; acc:  59.64; ppl:  6.19; xent: 1.82; lr: 0.00110; 15657/16318 tok/s;   8635 sec
+[2019-04-16 00:50:12,413 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 00:50:30,893 INFO] Step 6500/20000; acc:  60.71; ppl:  5.86; xent: 1.77; lr: 0.00110; 14298/15244 tok/s;   8707 sec
+[2019-04-16 00:51:36,784 INFO] Step 6550/20000; acc:  60.19; ppl:  6.04; xent: 1.80; lr: 0.00109; 15305/16839 tok/s;   8773 sec
+[2019-04-16 00:52:42,362 INFO] Step 6600/20000; acc:  60.83; ppl:  5.82; xent: 1.76; lr: 0.00109; 15570/16506 tok/s;   8839 sec
+[2019-04-16 00:53:48,471 INFO] Step 6650/20000; acc:  60.12; ppl:  6.10; xent: 1.81; lr: 0.00108; 15234/16844 tok/s;   8905 sec
+[2019-04-16 00:54:54,221 INFO] Step 6700/20000; acc:  59.70; ppl:  6.22; xent: 1.83; lr: 0.00108; 15014/16916 tok/s;   8971 sec
+[2019-04-16 00:55:59,097 INFO] Step 6750/20000; acc:  59.47; ppl:  6.29; xent: 1.84; lr: 0.00108; 15402/16702 tok/s;   9036 sec
+[2019-04-16 00:57:04,128 INFO] Step 6800/20000; acc:  59.63; ppl:  6.19; xent: 1.82; lr: 0.00107; 15655/16656 tok/s;   9101 sec
+[2019-04-16 00:58:10,644 INFO] Step 6850/20000; acc:  61.13; ppl:  5.71; xent: 1.74; lr: 0.00107; 15712/16419 tok/s;   9167 sec
+[2019-04-16 00:59:16,253 INFO] Step 6900/20000; acc:  60.98; ppl:  5.78; xent: 1.75; lr: 0.00106; 15721/16491 tok/s;   9233 sec
+[2019-04-16 01:00:21,519 INFO] Step 6950/20000; acc:  60.72; ppl:  5.83; xent: 1.76; lr: 0.00106; 15616/16340 tok/s;   9298 sec
+[2019-04-16 01:01:13,897 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 01:01:33,830 INFO] Step 7000/20000; acc:  61.75; ppl:  5.54; xent: 1.71; lr: 0.00106; 14282/15236 tok/s;   9370 sec
+[2019-04-16 01:01:33,846 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 01:01:42,266 INFO] Validation perplexity: 22.1326
+[2019-04-16 01:01:42,266 INFO] Validation accuracy: 47.4749
+[2019-04-16 01:01:42,266 INFO] Saving checkpoint save/en-de/demo-model2_step_7000.pt
+[2019-04-16 01:02:49,391 INFO] Step 7050/20000; acc:  61.28; ppl:  5.68; xent: 1.74; lr: 0.00105; 13371/14690 tok/s;   9446 sec
+[2019-04-16 01:03:54,813 INFO] Step 7100/20000; acc:  61.69; ppl:  5.54; xent: 1.71; lr: 0.00105; 15612/16531 tok/s;   9511 sec
+[2019-04-16 01:05:00,859 INFO] Step 7150/20000; acc:  60.92; ppl:  5.83; xent: 1.76; lr: 0.00105; 15156/16887 tok/s;   9577 sec
+[2019-04-16 01:06:06,594 INFO] Step 7200/20000; acc:  60.49; ppl:  5.95; xent: 1.78; lr: 0.00104; 15010/16933 tok/s;   9643 sec
+[2019-04-16 01:07:11,860 INFO] Step 7250/20000; acc:  60.63; ppl:  5.89; xent: 1.77; lr: 0.00104; 15372/16609 tok/s;   9708 sec
+[2019-04-16 01:08:17,094 INFO] Step 7300/20000; acc:  60.73; ppl:  5.83; xent: 1.76; lr: 0.00103; 15638/16607 tok/s;   9774 sec
+[2019-04-16 01:09:23,688 INFO] Step 7350/20000; acc:  61.80; ppl:  5.49; xent: 1.70; lr: 0.00103; 15648/16407 tok/s;   9840 sec
+[2019-04-16 01:10:29,610 INFO] Step 7400/20000; acc:  61.93; ppl:  5.48; xent: 1.70; lr: 0.00103; 15704/16397 tok/s;   9906 sec
+[2019-04-16 01:11:34,845 INFO] Step 7450/20000; acc:  61.78; ppl:  5.52; xent: 1.71; lr: 0.00102; 15602/16341 tok/s;   9971 sec
+[2019-04-16 01:12:25,926 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 01:12:47,234 INFO] Step 7500/20000; acc:  62.33; ppl:  5.35; xent: 1.68; lr: 0.00102; 14212/15169 tok/s;  10044 sec
+[2019-04-16 01:13:53,093 INFO] Step 7550/20000; acc:  62.43; ppl:  5.34; xent: 1.68; lr: 0.00102; 15408/16898 tok/s;  10110 sec
+[2019-04-16 01:14:58,593 INFO] Step 7600/20000; acc:  62.61; ppl:  5.27; xent: 1.66; lr: 0.00101; 15583/16550 tok/s;  10175 sec
+[2019-04-16 01:16:04,343 INFO] Step 7650/20000; acc:  61.59; ppl:  5.62; xent: 1.73; lr: 0.00101; 15092/16912 tok/s;  10241 sec
+[2019-04-16 01:17:10,312 INFO] Step 7700/20000; acc:  61.43; ppl:  5.63; xent: 1.73; lr: 0.00101; 15088/16896 tok/s;  10307 sec
+[2019-04-16 01:18:15,141 INFO] Step 7750/20000; acc:  61.47; ppl:  5.62; xent: 1.73; lr: 0.00100; 15486/16654 tok/s;  10372 sec
+[2019-04-16 01:19:20,563 INFO] Step 7800/20000; acc:  61.57; ppl:  5.57; xent: 1.72; lr: 0.00100; 15605/16621 tok/s;  10437 sec
+[2019-04-16 01:20:26,844 INFO] Step 7850/20000; acc:  62.70; ppl:  5.24; xent: 1.66; lr: 0.00100; 15568/16355 tok/s;  10503 sec
+[2019-04-16 01:21:32,625 INFO] Step 7900/20000; acc:  62.70; ppl:  5.26; xent: 1.66; lr: 0.00099; 15856/16589 tok/s;  10569 sec
+[2019-04-16 01:22:37,719 INFO] Step 7950/20000; acc:  62.62; ppl:  5.26; xent: 1.66; lr: 0.00099; 15656/16348 tok/s;  10634 sec
+[2019-04-16 01:23:27,676 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 01:23:50,296 INFO] Step 8000/20000; acc:  63.19; ppl:  5.12; xent: 1.63; lr: 0.00099; 14180/15158 tok/s;  10707 sec
+[2019-04-16 01:23:50,311 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 01:23:58,919 INFO] Validation perplexity: 22.2862
+[2019-04-16 01:23:58,919 INFO] Validation accuracy: 47.8831
+[2019-04-16 01:23:58,919 INFO] Saving checkpoint save/en-de/demo-model2_step_8000.pt
+[2019-04-16 01:25:05,778 INFO] Step 8050/20000; acc:  63.18; ppl:  5.12; xent: 1.63; lr: 0.00099; 13414/14725 tok/s;  10782 sec
+[2019-04-16 01:26:11,263 INFO] Step 8100/20000; acc:  63.37; ppl:  5.06; xent: 1.62; lr: 0.00098; 15536/16560 tok/s;  10848 sec
+[2019-04-16 01:27:17,200 INFO] Step 8150/20000; acc:  62.30; ppl:  5.39; xent: 1.69; lr: 0.00098; 15122/16871 tok/s;  10914 sec
+[2019-04-16 01:28:23,091 INFO] Step 8200/20000; acc:  61.84; ppl:  5.50; xent: 1.70; lr: 0.00098; 14962/16895 tok/s;  10980 sec
+[2019-04-16 01:29:28,044 INFO] Step 8250/20000; acc:  62.49; ppl:  5.31; xent: 1.67; lr: 0.00097; 15613/16650 tok/s;  11044 sec
+[2019-04-16 01:30:33,498 INFO] Step 8300/20000; acc:  62.29; ppl:  5.36; xent: 1.68; lr: 0.00097; 15584/16613 tok/s;  11110 sec
+[2019-04-16 01:31:39,732 INFO] Step 8350/20000; acc:  63.28; ppl:  5.08; xent: 1.62; lr: 0.00097; 15482/16339 tok/s;  11176 sec
+[2019-04-16 01:32:45,716 INFO] Step 8400/20000; acc:  63.63; ppl:  5.00; xent: 1.61; lr: 0.00096; 15927/16535 tok/s;  11242 sec
+[2019-04-16 01:33:50,982 INFO] Step 8450/20000; acc:  63.26; ppl:  5.08; xent: 1.63; lr: 0.00096; 15623/16261 tok/s;  11307 sec
+[2019-04-16 01:34:39,767 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 01:35:03,668 INFO] Step 8500/20000; acc:  64.01; ppl:  4.90; xent: 1.59; lr: 0.00096; 14156/15190 tok/s;  11380 sec
+[2019-04-16 01:36:09,652 INFO] Step 8550/20000; acc:  63.89; ppl:  4.94; xent: 1.60; lr: 0.00096; 15334/16859 tok/s;  11446 sec
+[2019-04-16 01:37:15,137 INFO] Step 8600/20000; acc:  64.00; ppl:  4.89; xent: 1.59; lr: 0.00095; 15512/16528 tok/s;  11512 sec
+[2019-04-16 01:38:21,278 INFO] Step 8650/20000; acc:  62.92; ppl:  5.21; xent: 1.65; lr: 0.00095; 15098/16802 tok/s;  11578 sec
+[2019-04-16 01:39:27,184 INFO] Step 8700/20000; acc:  62.59; ppl:  5.29; xent: 1.67; lr: 0.00095; 14922/16928 tok/s;  11644 sec
+[2019-04-16 01:40:32,200 INFO] Step 8750/20000; acc:  62.89; ppl:  5.18; xent: 1.65; lr: 0.00094; 15556/16512 tok/s;  11709 sec
+[2019-04-16 01:41:37,716 INFO] Step 8800/20000; acc:  62.95; ppl:  5.16; xent: 1.64; lr: 0.00094; 15606/16705 tok/s;  11774 sec
+[2019-04-16 01:42:44,044 INFO] Step 8850/20000; acc:  64.11; ppl:  4.85; xent: 1.58; lr: 0.00094; 15490/16274 tok/s;  11840 sec
+[2019-04-16 01:43:50,122 INFO] Step 8900/20000; acc:  64.21; ppl:  4.84; xent: 1.58; lr: 0.00094; 15911/16572 tok/s;  11907 sec
+[2019-04-16 01:44:55,372 INFO] Step 8950/20000; acc:  63.84; ppl:  4.92; xent: 1.59; lr: 0.00093; 15612/16217 tok/s;  11972 sec
+[2019-04-16 01:45:42,830 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 01:46:08,074 INFO] Step 9000/20000; acc:  64.69; ppl:  4.73; xent: 1.55; lr: 0.00093; 14129/15224 tok/s;  12045 sec
+[2019-04-16 01:46:08,105 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 01:46:16,540 INFO] Validation perplexity: 22.6993
+[2019-04-16 01:46:16,540 INFO] Validation accuracy: 48.241
+[2019-04-16 01:46:16,556 INFO] Saving checkpoint save/en-de/demo-model2_step_9000.pt
+[2019-04-16 01:47:23,322 INFO] Step 9050/20000; acc:  64.50; ppl:  4.78; xent: 1.57; lr: 0.00093; 13442/14799 tok/s;  12120 sec
+[2019-04-16 01:48:28,619 INFO] Step 9100/20000; acc:  64.53; ppl:  4.76; xent: 1.56; lr: 0.00093; 15541/16570 tok/s;  12185 sec
+[2019-04-16 01:49:34,681 INFO] Step 9150/20000; acc:  63.64; ppl:  5.00; xent: 1.61; lr: 0.00092; 15175/16809 tok/s;  12251 sec
+[2019-04-16 01:50:40,462 INFO] Step 9200/20000; acc:  63.16; ppl:  5.12; xent: 1.63; lr: 0.00092; 14962/16893 tok/s;  12317 sec
+[2019-04-16 01:51:45,619 INFO] Step 9250/20000; acc:  63.62; ppl:  5.00; xent: 1.61; lr: 0.00092; 15531/16513 tok/s;  12382 sec
+[2019-04-16 01:52:51,322 INFO] Step 9300/20000; acc:  63.58; ppl:  4.98; xent: 1.61; lr: 0.00092; 15538/16709 tok/s;  12448 sec
+[2019-04-16 01:53:57,494 INFO] Step 9350/20000; acc:  64.88; ppl:  4.67; xent: 1.54; lr: 0.00091; 15516/16313 tok/s;  12514 sec
+[2019-04-16 01:55:03,510 INFO] Step 9400/20000; acc:  64.82; ppl:  4.69; xent: 1.54; lr: 0.00091; 15943/16526 tok/s;  12580 sec
+[2019-04-16 01:56:08,432 INFO] Step 9450/20000; acc:  64.53; ppl:  4.74; xent: 1.56; lr: 0.00091; 15691/16344 tok/s;  12645 sec
+[2019-04-16 01:56:54,702 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 01:57:21,243 INFO] Step 9500/20000; acc:  65.32; ppl:  4.57; xent: 1.52; lr: 0.00091; 14122/15178 tok/s;  12718 sec
+[2019-04-16 01:58:27,383 INFO] Step 9550/20000; acc:  65.10; ppl:  4.63; xent: 1.53; lr: 0.00090; 15294/16852 tok/s;  12784 sec
+[2019-04-16 01:59:32,790 INFO] Step 9600/20000; acc:  65.03; ppl:  4.63; xent: 1.53; lr: 0.00090; 15487/16541 tok/s;  12849 sec
+[2019-04-16 02:00:38,899 INFO] Step 9650/20000; acc:  64.25; ppl:  4.85; xent: 1.58; lr: 0.00090; 15059/16716 tok/s;  12915 sec
+[2019-04-16 02:01:44,821 INFO] Step 9700/20000; acc:  63.84; ppl:  4.94; xent: 1.60; lr: 0.00090; 15060/16856 tok/s;  12981 sec
+[2019-04-16 02:02:49,775 INFO] Step 9750/20000; acc:  64.15; ppl:  4.86; xent: 1.58; lr: 0.00090; 15502/16648 tok/s;  13046 sec
+[2019-04-16 02:03:55,478 INFO] Step 9800/20000; acc:  64.45; ppl:  4.77; xent: 1.56; lr: 0.00089; 15600/16684 tok/s;  13112 sec
+[2019-04-16 02:05:01,572 INFO] Step 9850/20000; acc:  65.23; ppl:  4.57; xent: 1.52; lr: 0.00089; 15495/16374 tok/s;  13178 sec
+[2019-04-16 02:06:07,603 INFO] Step 9900/20000; acc:  65.60; ppl:  4.50; xent: 1.50; lr: 0.00089; 15981/16523 tok/s;  13244 sec
+[2019-04-16 02:07:12,556 INFO] Step 9950/20000; acc:  65.15; ppl:  4.59; xent: 1.52; lr: 0.00089; 15657/16325 tok/s;  13309 sec
+[2019-04-16 02:07:57,108 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 02:08:25,070 INFO] Step 10000/20000; acc:  65.98; ppl:  4.42; xent: 1.49; lr: 0.00088; 14182/15255 tok/s;  13382 sec
+[2019-04-16 02:08:25,086 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 02:08:33,428 INFO] Validation perplexity: 23.0958
+[2019-04-16 02:08:33,428 INFO] Validation accuracy: 48.3114
+[2019-04-16 02:08:33,428 INFO] Saving checkpoint save/en-de/demo-model2_step_10000.pt
+[2019-04-16 02:09:40,193 INFO] Step 10050/20000; acc:  65.61; ppl:  4.51; xent: 1.51; lr: 0.00088; 13457/14835 tok/s;  13457 sec
+[2019-04-16 02:10:45,490 INFO] Step 10100/20000; acc:  65.70; ppl:  4.48; xent: 1.50; lr: 0.00088; 15537/16568 tok/s;  13522 sec
+[2019-04-16 02:11:51,537 INFO] Step 10150/20000; acc:  64.84; ppl:  4.71; xent: 1.55; lr: 0.00088; 15079/16677 tok/s;  13588 sec
+[2019-04-16 02:12:57,287 INFO] Step 10200/20000; acc:  64.41; ppl:  4.80; xent: 1.57; lr: 0.00088; 15105/16917 tok/s;  13654 sec
+[2019-04-16 02:14:02,225 INFO] Step 10250/20000; acc:  64.82; ppl:  4.68; xent: 1.54; lr: 0.00087; 15498/16654 tok/s;  13719 sec
+[2019-04-16 02:15:07,881 INFO] Step 10300/20000; acc:  64.92; ppl:  4.64; xent: 1.54; lr: 0.00087; 15629/16671 tok/s;  13784 sec
+[2019-04-16 02:16:14,147 INFO] Step 10350/20000; acc:  65.93; ppl:  4.43; xent: 1.49; lr: 0.00087; 15451/16300 tok/s;  13851 sec
+[2019-04-16 02:17:20,085 INFO] Step 10400/20000; acc:  66.14; ppl:  4.37; xent: 1.47; lr: 0.00087; 15995/16586 tok/s;  13917 sec
+[2019-04-16 02:18:24,897 INFO] Step 10450/20000; acc:  65.65; ppl:  4.49; xent: 1.50; lr: 0.00086; 15663/16324 tok/s;  13981 sec
+[2019-04-16 02:19:08,450 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 02:19:37,708 INFO] Step 10500/20000; acc:  66.59; ppl:  4.28; xent: 1.45; lr: 0.00086; 14124/15255 tok/s;  14054 sec
+[2019-04-16 02:20:43,693 INFO] Step 10550/20000; acc:  65.85; ppl:  4.44; xent: 1.49; lr: 0.00086; 15205/16782 tok/s;  14120 sec
+[2019-04-16 02:21:49,177 INFO] Step 10600/20000; acc:  66.43; ppl:  4.32; xent: 1.46; lr: 0.00086; 15619/16622 tok/s;  14186 sec
+[2019-04-16 02:22:55,177 INFO] Step 10650/20000; acc:  65.34; ppl:  4.58; xent: 1.52; lr: 0.00086; 15111/16704 tok/s;  14252 sec
+[2019-04-16 02:24:01,052 INFO] Step 10700/20000; acc:  64.85; ppl:  4.68; xent: 1.54; lr: 0.00085; 15033/16899 tok/s;  14318 sec
+[2019-04-16 02:25:05,397 INFO] Step 10750/20000; acc:  65.38; ppl:  4.56; xent: 1.52; lr: 0.00085; 15563/16613 tok/s;  14382 sec
+[2019-04-16 02:26:11,459 INFO] Step 10800/20000; acc:  65.49; ppl:  4.51; xent: 1.51; lr: 0.00085; 15659/16735 tok/s;  14448 sec
+[2019-04-16 02:27:17,662 INFO] Step 10850/20000; acc:  66.40; ppl:  4.32; xent: 1.46; lr: 0.00085; 15470/16292 tok/s;  14514 sec
+[2019-04-16 02:28:23,569 INFO] Step 10900/20000; acc:  66.80; ppl:  4.24; xent: 1.44; lr: 0.00085; 15989/16587 tok/s;  14580 sec
+[2019-04-16 02:29:28,709 INFO] Step 10950/20000; acc:  66.14; ppl:  4.37; xent: 1.47; lr: 0.00084; 15572/16258 tok/s;  14645 sec
+[2019-04-16 02:30:10,840 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 02:30:41,395 INFO] Step 11000/20000; acc:  66.80; ppl:  4.24; xent: 1.44; lr: 0.00084; 14091/15291 tok/s;  14718 sec
+[2019-04-16 02:30:41,411 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 02:30:49,753 INFO] Validation perplexity: 23.5166
+[2019-04-16 02:30:49,753 INFO] Validation accuracy: 48.229
+[2019-04-16 02:30:49,753 INFO] Saving checkpoint save/en-de/demo-model2_step_11000.pt
+[2019-04-16 02:31:56,706 INFO] Step 11050/20000; acc:  66.25; ppl:  4.34; xent: 1.47; lr: 0.00084; 13287/14638 tok/s;  14793 sec
+[2019-04-16 02:33:01,972 INFO] Step 11100/20000; acc:  67.08; ppl:  4.18; xent: 1.43; lr: 0.00084; 15789/16694 tok/s;  14858 sec
+[2019-04-16 02:34:08,065 INFO] Step 11150/20000; acc:  65.86; ppl:  4.45; xent: 1.49; lr: 0.00084; 15076/16759 tok/s;  14925 sec
+[2019-04-16 02:35:13,987 INFO] Step 11200/20000; acc:  65.40; ppl:  4.56; xent: 1.52; lr: 0.00084; 15046/16889 tok/s;  14990 sec
+[2019-04-16 02:36:18,331 INFO] Step 11250/20000; acc:  65.86; ppl:  4.44; xent: 1.49; lr: 0.00083; 15550/16600 tok/s;  15055 sec
+[2019-04-16 02:37:24,378 INFO] Step 11300/20000; acc:  66.15; ppl:  4.38; xent: 1.48; lr: 0.00083; 15649/16712 tok/s;  15121 sec
+[2019-04-16 02:38:30,706 INFO] Step 11350/20000; acc:  66.85; ppl:  4.22; xent: 1.44; lr: 0.00083; 15461/16281 tok/s;  15187 sec
+[2019-04-16 02:39:36,566 INFO] Step 11400/20000; acc:  67.36; ppl:  4.12; xent: 1.42; lr: 0.00083; 15982/16589 tok/s;  15253 sec
+[2019-04-16 02:40:41,519 INFO] Step 11450/20000; acc:  66.53; ppl:  4.29; xent: 1.46; lr: 0.00083; 15582/16331 tok/s;  15318 sec
+[2019-04-16 02:41:22,244 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 02:41:54,127 INFO] Step 11500/20000; acc:  67.29; ppl:  4.13; xent: 1.42; lr: 0.00082; 14113/15322 tok/s;  15391 sec
+[2019-04-16 02:42:59,862 INFO] Step 11550/20000; acc:  66.77; ppl:  4.24; xent: 1.45; lr: 0.00082; 15234/16739 tok/s;  15456 sec
+[2019-04-16 02:44:05,377 INFO] Step 11600/20000; acc:  67.38; ppl:  4.11; xent: 1.41; lr: 0.00082; 15729/16614 tok/s;  15522 sec
+[2019-04-16 02:45:11,518 INFO] Step 11650/20000; acc:  66.45; ppl:  4.32; xent: 1.46; lr: 0.00082; 15076/16736 tok/s;  15588 sec
+[2019-04-16 02:46:17,502 INFO] Step 11700/20000; acc:  65.85; ppl:  4.46; xent: 1.49; lr: 0.00082; 15048/16931 tok/s;  15654 sec
+[2019-04-16 02:47:21,893 INFO] Step 11750/20000; acc:  66.32; ppl:  4.33; xent: 1.47; lr: 0.00082; 15558/16564 tok/s;  15718 sec
+[2019-04-16 02:48:27,815 INFO] Step 11800/20000; acc:  66.41; ppl:  4.31; xent: 1.46; lr: 0.00081; 15587/16737 tok/s;  15784 sec
+[2019-04-16 02:49:33,940 INFO] Step 11850/20000; acc:  67.51; ppl:  4.08; xent: 1.41; lr: 0.00081; 15595/16305 tok/s;  15850 sec
+[2019-04-16 02:50:39,769 INFO] Step 11900/20000; acc:  67.79; ppl:  4.03; xent: 1.39; lr: 0.00081; 15984/16623 tok/s;  15916 sec
+[2019-04-16 02:51:44,925 INFO] Step 11950/20000; acc:  66.98; ppl:  4.19; xent: 1.43; lr: 0.00081; 15529/16285 tok/s;  15981 sec
+[2019-04-16 02:52:24,400 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 02:52:57,736 INFO] Step 12000/20000; acc:  67.64; ppl:  4.06; xent: 1.40; lr: 0.00081; 14078/15269 tok/s;  16054 sec
+[2019-04-16 02:52:57,767 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 02:53:06,125 INFO] Validation perplexity: 23.5346
+[2019-04-16 02:53:06,125 INFO] Validation accuracy: 48.3023
+[2019-04-16 02:53:06,125 INFO] Saving checkpoint save/en-de/demo-model2_step_12000.pt
+[2019-04-16 02:54:12,906 INFO] Step 12050/20000; acc:  67.25; ppl:  4.14; xent: 1.42; lr: 0.00081; 13286/14665 tok/s;  16129 sec
+[2019-04-16 02:55:18,250 INFO] Step 12100/20000; acc:  67.58; ppl:  4.06; xent: 1.40; lr: 0.00080; 15707/16646 tok/s;  16195 sec
+[2019-04-16 02:56:24,625 INFO] Step 12150/20000; acc:  67.08; ppl:  4.18; xent: 1.43; lr: 0.00080; 15113/16680 tok/s;  16261 sec
+[2019-04-16 02:57:30,734 INFO] Step 12200/20000; acc:  66.29; ppl:  4.35; xent: 1.47; lr: 0.00080; 15031/16897 tok/s;  16327 sec
+[2019-04-16 02:58:35,172 INFO] Step 12250/20000; acc:  66.81; ppl:  4.24; xent: 1.44; lr: 0.00080; 15520/16565 tok/s;  16392 sec
+[2019-04-16 02:59:41,219 INFO] Step 12300/20000; acc:  66.73; ppl:  4.24; xent: 1.44; lr: 0.00080; 15516/16698 tok/s;  16458 sec
+[2019-04-16 03:00:47,360 INFO] Step 12350/20000; acc:  68.13; ppl:  3.96; xent: 1.38; lr: 0.00080; 15656/16258 tok/s;  16524 sec
+[2019-04-16 03:01:53,188 INFO] Step 12400/20000; acc:  68.15; ppl:  3.95; xent: 1.37; lr: 0.00079; 15832/16521 tok/s;  16590 sec
+[2019-04-16 03:02:58,360 INFO] Step 12450/20000; acc:  67.42; ppl:  4.10; xent: 1.41; lr: 0.00079; 15688/16391 tok/s;  16655 sec
+[2019-04-16 03:03:36,476 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 03:04:10,968 INFO] Step 12500/20000; acc:  67.90; ppl:  4.00; xent: 1.39; lr: 0.00079; 14041/15298 tok/s;  16727 sec
+[2019-04-16 03:05:16,780 INFO] Step 12550/20000; acc:  67.82; ppl:  4.02; xent: 1.39; lr: 0.00079; 15230/16773 tok/s;  16793 sec
+[2019-04-16 03:06:22,140 INFO] Step 12600/20000; acc:  68.07; ppl:  3.98; xent: 1.38; lr: 0.00079; 15711/16646 tok/s;  16859 sec
+[2019-04-16 03:07:28,405 INFO] Step 12650/20000; acc:  67.49; ppl:  4.10; xent: 1.41; lr: 0.00079; 15125/16735 tok/s;  16925 sec
+[2019-04-16 03:08:34,405 INFO] Step 12700/20000; acc:  66.76; ppl:  4.25; xent: 1.45; lr: 0.00078; 15051/16927 tok/s;  16991 sec
+[2019-04-16 03:09:38,875 INFO] Step 12750/20000; acc:  67.21; ppl:  4.15; xent: 1.42; lr: 0.00078; 15534/16541 tok/s;  17055 sec
+[2019-04-16 03:10:44,718 INFO] Step 12800/20000; acc:  67.22; ppl:  4.13; xent: 1.42; lr: 0.00078; 15564/16755 tok/s;  17121 sec
+[2019-04-16 03:11:50,672 INFO] Step 12850/20000; acc:  68.51; ppl:  3.89; xent: 1.36; lr: 0.00078; 15714/16197 tok/s;  17187 sec
+[2019-04-16 03:12:56,765 INFO] Step 12900/20000; acc:  68.72; ppl:  3.86; xent: 1.35; lr: 0.00078; 15770/16503 tok/s;  17253 sec
+[2019-04-16 03:14:02,031 INFO] Step 12950/20000; acc:  67.86; ppl:  4.00; xent: 1.39; lr: 0.00078; 15667/16406 tok/s;  17318 sec
+[2019-04-16 03:14:38,710 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 03:15:14,639 INFO] Step 13000/20000; acc:  68.39; ppl:  3.92; xent: 1.36; lr: 0.00078; 13979/15294 tok/s;  17391 sec
+[2019-04-16 03:15:14,655 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 03:15:23,028 INFO] Validation perplexity: 24.0634
+[2019-04-16 03:15:23,028 INFO] Validation accuracy: 48.1686
+[2019-04-16 03:15:23,028 INFO] Saving checkpoint save/en-de/demo-model2_step_13000.pt
+[2019-04-16 03:16:29,762 INFO] Step 13050/20000; acc:  68.21; ppl:  3.94; xent: 1.37; lr: 0.00077; 13398/14644 tok/s;  17466 sec
+[2019-04-16 03:17:35,340 INFO] Step 13100/20000; acc:  68.44; ppl:  3.91; xent: 1.36; lr: 0.00077; 15608/16680 tok/s;  17532 sec
+[2019-04-16 03:18:41,700 INFO] Step 13150/20000; acc:  68.07; ppl:  3.99; xent: 1.38; lr: 0.00077; 15138/16711 tok/s;  17598 sec
+[2019-04-16 03:19:47,637 INFO] Step 13200/20000; acc:  67.05; ppl:  4.18; xent: 1.43; lr: 0.00077; 15060/16946 tok/s;  17664 sec
+[2019-04-16 03:20:52,059 INFO] Step 13250/20000; acc:  67.54; ppl:  4.08; xent: 1.41; lr: 0.00077; 15470/16543 tok/s;  17729 sec
+[2019-04-16 03:21:57,981 INFO] Step 13300/20000; acc:  67.62; ppl:  4.05; xent: 1.40; lr: 0.00077; 15634/16668 tok/s;  17794 sec
+[2019-04-16 03:23:04,200 INFO] Step 13350/20000; acc:  69.04; ppl:  3.79; xent: 1.33; lr: 0.00076; 15633/16196 tok/s;  17861 sec
+[2019-04-16 03:24:09,747 INFO] Step 13400/20000; acc:  68.88; ppl:  3.81; xent: 1.34; lr: 0.00076; 15775/16516 tok/s;  17926 sec
+[2019-04-16 03:25:15,029 INFO] Step 13450/20000; acc:  68.32; ppl:  3.92; xent: 1.37; lr: 0.00076; 15739/16510 tok/s;  17991 sec
+[2019-04-16 03:25:50,489 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 03:26:27,636 INFO] Step 13500/20000; acc:  68.88; ppl:  3.83; xent: 1.34; lr: 0.00076; 14019/15322 tok/s;  18064 sec
+[2019-04-16 03:27:33,511 INFO] Step 13550/20000; acc:  68.61; ppl:  3.86; xent: 1.35; lr: 0.00076; 15282/16701 tok/s;  18130 sec
+[2019-04-16 03:28:38,949 INFO] Step 13600/20000; acc:  68.86; ppl:  3.82; xent: 1.34; lr: 0.00076; 15668/16680 tok/s;  18195 sec
+[2019-04-16 03:29:45,121 INFO] Step 13650/20000; acc:  68.34; ppl:  3.93; xent: 1.37; lr: 0.00076; 15143/16775 tok/s;  18262 sec
+[2019-04-16 03:30:50,996 INFO] Step 13700/20000; acc:  67.54; ppl:  4.09; xent: 1.41; lr: 0.00076; 15115/16934 tok/s;  18327 sec
+[2019-04-16 03:31:55,090 INFO] Step 13750/20000; acc:  67.97; ppl:  4.00; xent: 1.39; lr: 0.00075; 15510/16676 tok/s;  18392 sec
+[2019-04-16 03:33:00,731 INFO] Step 13800/20000; acc:  68.06; ppl:  3.96; xent: 1.38; lr: 0.00075; 15736/16700 tok/s;  18457 sec
+[2019-04-16 03:34:06,700 INFO] Step 13850/20000; acc:  69.28; ppl:  3.74; xent: 1.32; lr: 0.00075; 15639/16277 tok/s;  18523 sec
+[2019-04-16 03:35:12,497 INFO] Step 13900/20000; acc:  69.26; ppl:  3.75; xent: 1.32; lr: 0.00075; 15780/16422 tok/s;  18589 sec
+[2019-04-16 03:36:17,903 INFO] Step 13950/20000; acc:  68.74; ppl:  3.84; xent: 1.35; lr: 0.00075; 15694/16522 tok/s;  18654 sec
+[2019-04-16 03:36:51,958 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 03:37:30,449 INFO] Step 14000/20000; acc:  69.15; ppl:  3.77; xent: 1.33; lr: 0.00075; 14030/15322 tok/s;  18727 sec
+[2019-04-16 03:37:30,480 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 03:37:38,775 INFO] Validation perplexity: 24.2795
+[2019-04-16 03:37:38,775 INFO] Validation accuracy: 48.0761
+[2019-04-16 03:37:38,775 INFO] Saving checkpoint save/en-de/demo-model2_step_14000.pt
+[2019-04-16 03:38:45,540 INFO] Step 14050/20000; acc:  68.94; ppl:  3.81; xent: 1.34; lr: 0.00075; 13334/14664 tok/s;  18802 sec
+[2019-04-16 03:39:51,072 INFO] Step 14100/20000; acc:  69.37; ppl:  3.74; xent: 1.32; lr: 0.00074; 15699/16527 tok/s;  18868 sec
+[2019-04-16 03:40:57,509 INFO] Step 14150/20000; acc:  68.71; ppl:  3.86; xent: 1.35; lr: 0.00074; 15077/16845 tok/s;  18934 sec
+[2019-04-16 03:42:03,369 INFO] Step 14200/20000; acc:  67.62; ppl:  4.06; xent: 1.40; lr: 0.00074; 15022/16917 tok/s;  19000 sec
+[2019-04-16 03:43:07,775 INFO] Step 14250/20000; acc:  68.61; ppl:  3.88; xent: 1.36; lr: 0.00074; 15556/16560 tok/s;  19064 sec
+[2019-04-16 03:44:13,838 INFO] Step 14300/20000; acc:  68.50; ppl:  3.88; xent: 1.36; lr: 0.00074; 15626/16544 tok/s;  19130 sec
+[2019-04-16 03:45:20,119 INFO] Step 14350/20000; acc:  69.70; ppl:  3.67; xent: 1.30; lr: 0.00074; 15581/16299 tok/s;  19197 sec
+[2019-04-16 03:46:25,588 INFO] Step 14400/20000; acc:  69.54; ppl:  3.69; xent: 1.31; lr: 0.00074; 15834/16486 tok/s;  19262 sec
+[2019-04-16 03:47:31,057 INFO] Step 14450/20000; acc:  69.05; ppl:  3.78; xent: 1.33; lr: 0.00074; 15665/16530 tok/s;  19328 sec
+[2019-04-16 03:48:03,908 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 03:48:43,696 INFO] Step 14500/20000; acc:  69.51; ppl:  3.71; xent: 1.31; lr: 0.00073; 13946/15188 tok/s;  19400 sec
+[2019-04-16 03:49:49,665 INFO] Step 14550/20000; acc:  69.27; ppl:  3.75; xent: 1.32; lr: 0.00073; 15098/16669 tok/s;  19466 sec
+[2019-04-16 03:50:55,462 INFO] Step 14600/20000; acc:  69.53; ppl:  3.70; xent: 1.31; lr: 0.00073; 15767/16596 tok/s;  19532 sec
+[2019-04-16 03:52:01,758 INFO] Step 14650/20000; acc:  69.20; ppl:  3.76; xent: 1.32; lr: 0.00073; 15190/16858 tok/s;  19598 sec
+[2019-04-16 03:53:07,665 INFO] Step 14700/20000; acc:  68.08; ppl:  3.98; xent: 1.38; lr: 0.00073; 14847/16812 tok/s;  19664 sec
+[2019-04-16 03:54:12,040 INFO] Step 14750/20000; acc:  68.88; ppl:  3.83; xent: 1.34; lr: 0.00073; 15710/16645 tok/s;  19728 sec
+[2019-04-16 03:55:17,978 INFO] Step 14800/20000; acc:  68.84; ppl:  3.82; xent: 1.34; lr: 0.00073; 15671/16533 tok/s;  19794 sec
+[2019-04-16 03:56:24,290 INFO] Step 14850/20000; acc:  70.00; ppl:  3.61; xent: 1.28; lr: 0.00073; 15544/16379 tok/s;  19861 sec
+[2019-04-16 03:57:30,056 INFO] Step 14900/20000; acc:  69.99; ppl:  3.62; xent: 1.29; lr: 0.00072; 15794/16387 tok/s;  19927 sec
+[2019-04-16 03:58:35,462 INFO] Step 14950/20000; acc:  69.44; ppl:  3.72; xent: 1.31; lr: 0.00072; 15664/16514 tok/s;  19992 sec
+[2019-04-16 03:59:06,877 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 03:59:47,898 INFO] Step 15000/20000; acc:  69.91; ppl:  3.63; xent: 1.29; lr: 0.00072; 13999/15244 tok/s;  20064 sec
+[2019-04-16 03:59:47,930 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 03:59:56,240 INFO] Validation perplexity: 25.1472
+[2019-04-16 03:59:56,240 INFO] Validation accuracy: 47.9756
+[2019-04-16 03:59:56,240 INFO] Saving checkpoint save/en-de/demo-model2_step_15000.pt
+[2019-04-16 04:01:02,912 INFO] Step 15050/20000; acc:  69.63; ppl:  3.68; xent: 1.30; lr: 0.00072; 13281/14643 tok/s;  20139 sec
+[2019-04-16 04:02:08,725 INFO] Step 15100/20000; acc:  69.79; ppl:  3.65; xent: 1.29; lr: 0.00072; 15694/16601 tok/s;  20205 sec
+[2019-04-16 04:03:15,271 INFO] Step 15150/20000; acc:  69.62; ppl:  3.71; xent: 1.31; lr: 0.00072; 15114/16843 tok/s;  20272 sec
+[2019-04-16 04:04:20,943 INFO] Step 15200/20000; acc:  68.52; ppl:  3.88; xent: 1.36; lr: 0.00072; 14977/16849 tok/s;  20337 sec
+[2019-04-16 04:05:25,584 INFO] Step 15250/20000; acc:  69.22; ppl:  3.77; xent: 1.33; lr: 0.00072; 15598/16603 tok/s;  20402 sec
+[2019-04-16 04:06:31,412 INFO] Step 15300/20000; acc:  69.13; ppl:  3.76; xent: 1.33; lr: 0.00071; 15751/16543 tok/s;  20468 sec
+[2019-04-16 04:07:37,803 INFO] Step 15350/20000; acc:  70.40; ppl:  3.55; xent: 1.27; lr: 0.00071; 15516/16369 tok/s;  20534 sec
+[2019-04-16 04:08:43,194 INFO] Step 15400/20000; acc:  70.21; ppl:  3.57; xent: 1.27; lr: 0.00071; 15888/16422 tok/s;  20600 sec
+[2019-04-16 04:09:48,663 INFO] Step 15450/20000; acc:  69.73; ppl:  3.66; xent: 1.30; lr: 0.00071; 15656/16484 tok/s;  20665 sec
+[2019-04-16 04:10:18,859 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 04:11:01,286 INFO] Step 15500/20000; acc:  70.17; ppl:  3.59; xent: 1.28; lr: 0.00071; 13888/15279 tok/s;  20738 sec
+[2019-04-16 04:12:07,208 INFO] Step 15550/20000; acc:  70.07; ppl:  3.61; xent: 1.28; lr: 0.00071; 15196/16657 tok/s;  20804 sec
+[2019-04-16 04:13:12,818 INFO] Step 15600/20000; acc:  70.01; ppl:  3.62; xent: 1.29; lr: 0.00071; 15601/16589 tok/s;  20869 sec
+[2019-04-16 04:14:19,536 INFO] Step 15650/20000; acc:  69.93; ppl:  3.64; xent: 1.29; lr: 0.00071; 15124/16862 tok/s;  20936 sec
+[2019-04-16 04:15:25,115 INFO] Step 15700/20000; acc:  68.83; ppl:  3.83; xent: 1.34; lr: 0.00071; 14964/16852 tok/s;  21002 sec
+[2019-04-16 04:16:29,740 INFO] Step 15750/20000; acc:  69.76; ppl:  3.67; xent: 1.30; lr: 0.00070; 15713/16613 tok/s;  21066 sec
+[2019-04-16 04:17:35,724 INFO] Step 15800/20000; acc:  69.39; ppl:  3.71; xent: 1.31; lr: 0.00070; 15690/16527 tok/s;  21132 sec
+[2019-04-16 04:18:42,037 INFO] Step 15850/20000; acc:  70.50; ppl:  3.53; xent: 1.26; lr: 0.00070; 15459/16362 tok/s;  21198 sec
+[2019-04-16 04:19:47,412 INFO] Step 15900/20000; acc:  70.87; ppl:  3.47; xent: 1.25; lr: 0.00070; 15994/16389 tok/s;  21264 sec
+[2019-04-16 04:20:53,006 INFO] Step 15950/20000; acc:  70.08; ppl:  3.60; xent: 1.28; lr: 0.00070; 15633/16507 tok/s;  21329 sec
+[2019-04-16 04:21:21,780 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 04:22:05,658 INFO] Step 16000/20000; acc:  70.43; ppl:  3.55; xent: 1.27; lr: 0.00070; 13882/15226 tok/s;  21402 sec
+[2019-04-16 04:22:05,674 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 04:22:14,000 INFO] Validation perplexity: 25.9739
+[2019-04-16 04:22:14,000 INFO] Validation accuracy: 47.87
+[2019-04-16 04:22:14,000 INFO] Saving checkpoint save/en-de/demo-model2_step_16000.pt
+[2019-04-16 04:23:20,750 INFO] Step 16050/20000; acc:  70.52; ppl:  3.54; xent: 1.26; lr: 0.00070; 13344/14652 tok/s;  21477 sec
+[2019-04-16 04:24:26,390 INFO] Step 16100/20000; acc:  70.36; ppl:  3.56; xent: 1.27; lr: 0.00070; 15578/16608 tok/s;  21543 sec
+[2019-04-16 04:25:32,812 INFO] Step 16150/20000; acc:  70.24; ppl:  3.59; xent: 1.28; lr: 0.00070; 15197/16924 tok/s;  21609 sec
+[2019-04-16 04:26:38,508 INFO] Step 16200/20000; acc:  69.12; ppl:  3.78; xent: 1.33; lr: 0.00069; 14803/16741 tok/s;  21675 sec
+[2019-04-16 04:27:43,337 INFO] Step 16250/20000; acc:  70.18; ppl:  3.60; xent: 1.28; lr: 0.00069; 15805/16653 tok/s;  21740 sec
+[2019-04-16 04:28:49,368 INFO] Step 16300/20000; acc:  69.66; ppl:  3.67; xent: 1.30; lr: 0.00069; 15594/16512 tok/s;  21806 sec
+[2019-04-16 04:29:55,680 INFO] Step 16350/20000; acc:  70.95; ppl:  3.46; xent: 1.24; lr: 0.00069; 15532/16344 tok/s;  21872 sec
+[2019-04-16 04:31:01,087 INFO] Step 16400/20000; acc:  71.19; ppl:  3.42; xent: 1.23; lr: 0.00069; 15826/16253 tok/s;  21938 sec
+[2019-04-16 04:32:06,946 INFO] Step 16450/20000; acc:  70.39; ppl:  3.55; xent: 1.27; lr: 0.00069; 15667/16527 tok/s;  22003 sec
+[2019-04-16 04:32:34,487 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 04:33:19,617 INFO] Step 16500/20000; acc:  70.97; ppl:  3.46; xent: 1.24; lr: 0.00069; 13911/15262 tok/s;  22076 sec
+[2019-04-16 04:34:25,632 INFO] Step 16550/20000; acc:  70.70; ppl:  3.50; xent: 1.25; lr: 0.00069; 15214/16678 tok/s;  22142 sec
+[2019-04-16 04:35:31,335 INFO] Step 16600/20000; acc:  70.65; ppl:  3.51; xent: 1.26; lr: 0.00069; 15529/16604 tok/s;  22208 sec
+[2019-04-16 04:36:37,648 INFO] Step 16650/20000; acc:  70.55; ppl:  3.54; xent: 1.26; lr: 0.00068; 15271/16914 tok/s;  22274 sec
+[2019-04-16 04:37:43,179 INFO] Step 16700/20000; acc:  69.34; ppl:  3.74; xent: 1.32; lr: 0.00068; 14746/16815 tok/s;  22340 sec
+[2019-04-16 04:38:48,008 INFO] Step 16750/20000; acc:  70.49; ppl:  3.55; xent: 1.27; lr: 0.00068; 15803/16637 tok/s;  22404 sec
+[2019-04-16 04:39:53,914 INFO] Step 16800/20000; acc:  70.12; ppl:  3.59; xent: 1.28; lr: 0.00068; 15708/16556 tok/s;  22470 sec
+[2019-04-16 04:41:00,289 INFO] Step 16850/20000; acc:  71.22; ppl:  3.41; xent: 1.23; lr: 0.00068; 15504/16295 tok/s;  22537 sec
+[2019-04-16 04:42:05,461 INFO] Step 16900/20000; acc:  71.41; ppl:  3.38; xent: 1.22; lr: 0.00068; 15856/16352 tok/s;  22602 sec
+[2019-04-16 04:43:11,227 INFO] Step 16950/20000; acc:  70.77; ppl:  3.49; xent: 1.25; lr: 0.00068; 15710/16536 tok/s;  22668 sec
+[2019-04-16 04:43:37,346 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 04:44:23,772 INFO] Step 17000/20000; acc:  71.17; ppl:  3.43; xent: 1.23; lr: 0.00068; 13927/15279 tok/s;  22740 sec
+[2019-04-16 04:44:23,788 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 04:44:32,208 INFO] Validation perplexity: 26.9173
+[2019-04-16 04:44:32,208 INFO] Validation accuracy: 47.8509
+[2019-04-16 04:44:32,223 INFO] Saving checkpoint save/en-de/demo-model2_step_17000.pt
+[2019-04-16 04:45:39,083 INFO] Step 17050/20000; acc:  71.09; ppl:  3.44; xent: 1.23; lr: 0.00068; 13361/14621 tok/s;  22816 sec
+[2019-04-16 04:46:44,661 INFO] Step 17100/20000; acc:  70.65; ppl:  3.51; xent: 1.25; lr: 0.00068; 15466/16640 tok/s;  22881 sec
+[2019-04-16 04:47:51,083 INFO] Step 17150/20000; acc:  70.77; ppl:  3.50; xent: 1.25; lr: 0.00067; 15220/16891 tok/s;  22948 sec
+[2019-04-16 04:48:56,505 INFO] Step 17200/20000; acc:  69.86; ppl:  3.65; xent: 1.29; lr: 0.00067; 14899/16714 tok/s;  23013 sec
+[2019-04-16 04:50:01,552 INFO] Step 17250/20000; acc:  70.81; ppl:  3.50; xent: 1.25; lr: 0.00067; 15719/16717 tok/s;  23078 sec
+[2019-04-16 04:51:07,567 INFO] Step 17300/20000; acc:  70.64; ppl:  3.51; xent: 1.26; lr: 0.00067; 15681/16508 tok/s;  23144 sec
+[2019-04-16 04:52:13,942 INFO] Step 17350/20000; acc:  71.49; ppl:  3.37; xent: 1.22; lr: 0.00067; 15535/16294 tok/s;  23210 sec
+[2019-04-16 04:53:19,255 INFO] Step 17400/20000; acc:  71.70; ppl:  3.34; xent: 1.21; lr: 0.00067; 15786/16318 tok/s;  23276 sec
+[2019-04-16 04:54:25,066 INFO] Step 17450/20000; acc:  71.07; ppl:  3.44; xent: 1.24; lr: 0.00067; 15715/16559 tok/s;  23342 sec
+[2019-04-16 04:54:49,732 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 04:55:37,502 INFO] Step 17500/20000; acc:  71.41; ppl:  3.39; xent: 1.22; lr: 0.00067; 13908/15276 tok/s;  23414 sec
+[2019-04-16 04:56:43,549 INFO] Step 17550/20000; acc:  71.46; ppl:  3.38; xent: 1.22; lr: 0.00067; 15279/16669 tok/s;  23480 sec
+[2019-04-16 04:57:49,362 INFO] Step 17600/20000; acc:  70.96; ppl:  3.46; xent: 1.24; lr: 0.00067; 15407/16607 tok/s;  23546 sec
+[2019-04-16 04:58:55,956 INFO] Step 17650/20000; acc:  71.17; ppl:  3.44; xent: 1.24; lr: 0.00067; 15193/16833 tok/s;  23612 sec
+[2019-04-16 05:00:01,315 INFO] Step 17700/20000; acc:  70.09; ppl:  3.60; xent: 1.28; lr: 0.00066; 14892/16731 tok/s;  23678 sec
+[2019-04-16 05:01:06,128 INFO] Step 17750/20000; acc:  70.91; ppl:  3.47; xent: 1.24; lr: 0.00066; 15758/16705 tok/s;  23743 sec
+[2019-04-16 05:02:12,003 INFO] Step 17800/20000; acc:  70.98; ppl:  3.46; xent: 1.24; lr: 0.00066; 15612/16496 tok/s;  23808 sec
+[2019-04-16 05:03:18,378 INFO] Step 17850/20000; acc:  71.67; ppl:  3.35; xent: 1.21; lr: 0.00066; 15614/16420 tok/s;  23875 sec
+[2019-04-16 05:04:23,394 INFO] Step 17900/20000; acc:  72.01; ppl:  3.29; xent: 1.19; lr: 0.00066; 15921/16282 tok/s;  23940 sec
+[2019-04-16 05:05:29,394 INFO] Step 17950/20000; acc:  71.34; ppl:  3.40; xent: 1.22; lr: 0.00066; 15682/16575 tok/s;  24006 sec
+[2019-04-16 05:05:52,795 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 05:06:41,939 INFO] Step 18000/20000; acc:  71.72; ppl:  3.34; xent: 1.21; lr: 0.00066; 13861/15295 tok/s;  24078 sec
+[2019-04-16 05:06:41,955 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 05:06:50,422 INFO] Validation perplexity: 26.9665
+[2019-04-16 05:06:50,422 INFO] Validation accuracy: 48.0661
+[2019-04-16 05:06:50,422 INFO] Saving checkpoint save/en-de/demo-model2_step_18000.pt
+[2019-04-16 05:07:57,215 INFO] Step 18050/20000; acc:  71.76; ppl:  3.34; xent: 1.21; lr: 0.00066; 13424/14544 tok/s;  24154 sec
+[2019-04-16 05:09:02,934 INFO] Step 18100/20000; acc:  71.28; ppl:  3.41; xent: 1.23; lr: 0.00066; 15405/16689 tok/s;  24219 sec
+[2019-04-16 05:10:09,325 INFO] Step 18150/20000; acc:  71.16; ppl:  3.44; xent: 1.24; lr: 0.00066; 15141/16906 tok/s;  24286 sec
+[2019-04-16 05:11:14,793 INFO] Step 18200/20000; acc:  70.63; ppl:  3.52; xent: 1.26; lr: 0.00066; 14998/16714 tok/s;  24351 sec
+[2019-04-16 05:12:19,528 INFO] Step 18250/20000; acc:  71.21; ppl:  3.42; xent: 1.23; lr: 0.00065; 15770/16666 tok/s;  24416 sec
+[2019-04-16 05:13:25,622 INFO] Step 18300/20000; acc:  71.15; ppl:  3.43; xent: 1.23; lr: 0.00065; 15472/16420 tok/s;  24482 sec
+[2019-04-16 05:14:31,841 INFO] Step 18350/20000; acc:  71.94; ppl:  3.30; xent: 1.19; lr: 0.00065; 15745/16411 tok/s;  24548 sec
+[2019-04-16 05:15:37,122 INFO] Step 18400/20000; acc:  72.40; ppl:  3.24; xent: 1.17; lr: 0.00065; 15810/16349 tok/s;  24614 sec
+[2019-04-16 05:16:43,013 INFO] Step 18450/20000; acc:  71.57; ppl:  3.36; xent: 1.21; lr: 0.00065; 15756/16535 tok/s;  24679 sec
+[2019-04-16 05:17:05,086 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 05:17:55,527 INFO] Step 18500/20000; acc:  71.60; ppl:  3.36; xent: 1.21; lr: 0.00065; 13630/15308 tok/s;  24752 sec
+[2019-04-16 05:19:01,340 INFO] Step 18550/20000; acc:  72.19; ppl:  3.26; xent: 1.18; lr: 0.00065; 15512/16667 tok/s;  24818 sec
+[2019-04-16 05:20:07,090 INFO] Step 18600/20000; acc:  71.60; ppl:  3.36; xent: 1.21; lr: 0.00065; 15425/16612 tok/s;  24884 sec
+[2019-04-16 05:21:13,621 INFO] Step 18650/20000; acc:  71.45; ppl:  3.39; xent: 1.22; lr: 0.00065; 15079/16845 tok/s;  24950 sec
+[2019-04-16 05:22:19,027 INFO] Step 18700/20000; acc:  70.87; ppl:  3.47; xent: 1.24; lr: 0.00065; 15097/16829 tok/s;  25015 sec
+[2019-04-16 05:23:23,887 INFO] Step 18750/20000; acc:  71.48; ppl:  3.38; xent: 1.22; lr: 0.00065; 15728/16662 tok/s;  25080 sec
+[2019-04-16 05:24:29,965 INFO] Step 18800/20000; acc:  71.42; ppl:  3.38; xent: 1.22; lr: 0.00064; 15453/16414 tok/s;  25146 sec
+[2019-04-16 05:25:36,277 INFO] Step 18850/20000; acc:  72.19; ppl:  3.26; xent: 1.18; lr: 0.00064; 15737/16370 tok/s;  25213 sec
+[2019-04-16 05:26:41,543 INFO] Step 18900/20000; acc:  72.68; ppl:  3.19; xent: 1.16; lr: 0.00064; 15855/16341 tok/s;  25278 sec
+[2019-04-16 05:27:47,418 INFO] Step 18950/20000; acc:  71.81; ppl:  3.32; xent: 1.20; lr: 0.00064; 15739/16560 tok/s;  25344 sec
+[2019-04-16 05:28:08,085 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 05:28:59,620 INFO] Step 19000/20000; acc:  71.83; ppl:  3.32; xent: 1.20; lr: 0.00064; 13709/15362 tok/s;  25416 sec
+[2019-04-16 05:28:59,651 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 05:29:08,134 INFO] Validation perplexity: 27.2223
+[2019-04-16 05:29:08,134 INFO] Validation accuracy: 48.0972
+[2019-04-16 05:29:08,149 INFO] Saving checkpoint save/en-de/demo-model2_step_19000.pt
+[2019-04-16 05:30:14,774 INFO] Step 19050/20000; acc:  72.40; ppl:  3.24; xent: 1.18; lr: 0.00064; 13559/14558 tok/s;  25491 sec
+[2019-04-16 05:31:20,493 INFO] Step 19100/20000; acc:  71.89; ppl:  3.31; xent: 1.20; lr: 0.00064; 15438/16634 tok/s;  25557 sec
+[2019-04-16 05:32:27,055 INFO] Step 19150/20000; acc:  71.67; ppl:  3.35; xent: 1.21; lr: 0.00064; 15032/16897 tok/s;  25624 sec
+[2019-04-16 05:33:32,696 INFO] Step 19200/20000; acc:  71.05; ppl:  3.44; xent: 1.24; lr: 0.00064; 14980/16739 tok/s;  25689 sec
+[2019-04-16 05:34:37,884 INFO] Step 19250/20000; acc:  71.90; ppl:  3.33; xent: 1.20; lr: 0.00064; 15740/16610 tok/s;  25754 sec
+[2019-04-16 05:35:43,759 INFO] Step 19300/20000; acc:  71.66; ppl:  3.35; xent: 1.21; lr: 0.00064; 15533/16442 tok/s;  25820 sec
+[2019-04-16 05:36:49,884 INFO] Step 19350/20000; acc:  72.49; ppl:  3.23; xent: 1.17; lr: 0.00064; 15783/16406 tok/s;  25886 sec
+[2019-04-16 05:37:55,009 INFO] Step 19400/20000; acc:  72.89; ppl:  3.16; xent: 1.15; lr: 0.00063; 15872/16333 tok/s;  25951 sec
+[2019-04-16 05:39:01,025 INFO] Step 19450/20000; acc:  72.05; ppl:  3.29; xent: 1.19; lr: 0.00063; 15672/16594 tok/s;  26017 sec
+[2019-04-16 05:39:20,411 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 05:40:13,211 INFO] Step 19500/20000; acc:  72.18; ppl:  3.27; xent: 1.18; lr: 0.00063; 13733/15329 tok/s;  26090 sec
+[2019-04-16 05:41:19,117 INFO] Step 19550/20000; acc:  72.64; ppl:  3.20; xent: 1.16; lr: 0.00063; 15422/16590 tok/s;  26156 sec
+[2019-04-16 05:42:24,946 INFO] Step 19600/20000; acc:  72.08; ppl:  3.29; xent: 1.19; lr: 0.00063; 15337/16599 tok/s;  26221 sec
+[2019-04-16 05:43:31,664 INFO] Step 19650/20000; acc:  72.05; ppl:  3.30; xent: 1.19; lr: 0.00063; 15103/16894 tok/s;  26288 sec
+[2019-04-16 05:44:36,946 INFO] Step 19700/20000; acc:  71.29; ppl:  3.40; xent: 1.23; lr: 0.00063; 15059/16839 tok/s;  26353 sec
+[2019-04-16 05:45:41,774 INFO] Step 19750/20000; acc:  72.09; ppl:  3.29; xent: 1.19; lr: 0.00063; 15849/16611 tok/s;  26418 sec
+[2019-04-16 05:46:47,962 INFO] Step 19800/20000; acc:  71.92; ppl:  3.31; xent: 1.20; lr: 0.00063; 15417/16465 tok/s;  26484 sec
+[2019-04-16 05:47:54,149 INFO] Step 19850/20000; acc:  72.72; ppl:  3.19; xent: 1.16; lr: 0.00063; 15791/16351 tok/s;  26551 sec
+[2019-04-16 05:48:59,399 INFO] Step 19900/20000; acc:  73.15; ppl:  3.13; xent: 1.14; lr: 0.00063; 15837/16307 tok/s;  26616 sec
+[2019-04-16 05:50:05,384 INFO] Step 19950/20000; acc:  72.39; ppl:  3.24; xent: 1.18; lr: 0.00063; 15691/16606 tok/s;  26682 sec
+[2019-04-16 05:50:23,504 INFO] Loading dataset from data/en-de\demo.train.0.pt, number of examples: 418350
+[2019-04-16 05:51:17,507 INFO] Step 20000/20000; acc:  72.45; ppl:  3.23; xent: 1.17; lr: 0.00062; 13629/15179 tok/s;  26754 sec
+[2019-04-16 05:51:17,523 INFO] Loading dataset from data/en-de\demo.valid.0.pt, number of examples: 3003
+[2019-04-16 05:51:25,880 INFO] Validation perplexity: 27.7583
+[2019-04-16 05:51:25,880 INFO] Validation accuracy: 47.9354
+[2019-04-16 05:51:25,880 INFO] Saving checkpoint save/en-de/demo-model2_step_20000.pt
